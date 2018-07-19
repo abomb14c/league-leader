@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './create-user.css';
 
 export class CreateUser extends Component {
   constructor(props){
@@ -20,8 +21,8 @@ export class CreateUser extends Component {
   
   render() {
     return (
-      <form>
-        <h3>Create Account</h3>
+      <form className="create-user-form">
+        <h3 className="login-title">Create Account</h3>
         <input
           className="create-user"
           type="text"
@@ -46,7 +47,7 @@ export class CreateUser extends Component {
           placeholder="Password"
           onChange={this.handleChange}
         />
-        <button>Create Account</button>
+        <button className="create-user-button">Create Account</button>
       </form>
     )
   }

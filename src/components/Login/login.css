@@ -1,4 +1,4 @@
-.create-user, .login-user-container {
+.create-user-container, .login-user-container {
   display: flex;
   flex-direction: column;
   text-align: left;

@@ -1,4 +1,4 @@
-.login-button {
+.create-user-button {
   border: none;
   background-color: #7E8F7C;
   color: #fff;
@@ -7,23 +7,18 @@
   height: 35px;
 }
 
-.login-button:hover {
+.create-user-button:hover{
   background-color: #C63D0F;
 }
 
-.login-form {
-  display: flex;
-  flex-direction: column;
-}
-
-.login-user {
+.create-user {
   height: 30px;
   margin-bottom: 5%;
   padding-left: 2%;
   width: 80%;
 }
 
-.login-title {
-  color: #C63D0F;
-  font-size: 28px;
+.create-user-form {
+  display: flex;
+  flex-direction: column;
 }
