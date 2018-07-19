@@ -1,20 +1,28 @@
 import React, { Component } from 'react';
-
 import './App.css';
+import { Route, Redirect, Switch, withRouter } from 'react-router-dom';
+import Navigation from '../../components/Navigation/Navigation';
+import Leagues from '../../components/Leagues/Leagues';
+import Login from '../../components/Login/Login';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Welcome to React</h1>
+        <header>
+          <Navigation />
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Route
+          exact path="/login"
+          component={Login} 
+        />
+        <Route
+          exact path="/leagues"
+          component={Leagues} 
+        />
       </div>
     );
   }
 }
 
-export default App;
+export default withRouter(App);
