@@ -9,7 +9,7 @@ const Login = () => {
       <div className="create-user">
         <CreateUser />
       </div>
-      <div className="login-user">
+      <div className="login-user-container">
         <LoginUser />
       </div>
     </div>

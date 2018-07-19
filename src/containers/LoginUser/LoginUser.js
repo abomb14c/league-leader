@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './login-user.css'
 
 export class LoginUser extends Component {
   constructor(props){
@@ -19,8 +20,8 @@ export class LoginUser extends Component {
   
   render() {
     return (
-      <form>
-        <h3>Login</h3>
+      <form className="login-form">
+        <h3 className="login-title">Login</h3>
         <input
           className="login-user"
           type="text"
@@ -37,7 +38,7 @@ export class LoginUser extends Component {
           placeholder="Password"
           onChange={this.handleChange}
         />
-        <button>Login</button>
+        <button className="login-button">Login</button>
       </form>
     )
   }
