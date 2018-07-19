@@ -17,7 +17,8 @@
 }
 
 .login-user {
-  height: 30px;
+  border: none;
+  height: 35px;
   margin-bottom: 5%;
   padding-left: 2%;
   width: 80%;

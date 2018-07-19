@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import './login-user.css'
+import { connect } from 'react-redux'
+import { updateUser } from '../../actions/updateUser/updateUser';
+import './login-user.css';
 
 export class LoginUser extends Component {
   constructor(props){
@@ -18,9 +20,14 @@ export class LoginUser extends Component {
     });
   };
   
+  handleSubmit = event => {
+    event.preventDefault();
+    this.props.handleLogin(this.state)
+  }
+
   render() {
     return (
-      <form className="login-form">
+      <form className="login-form" onSubmit={this.handleSubmit}>
         <h3 className="login-title">Login</h3>
         <input
           className="login-user"
@@ -44,4 +51,8 @@ export class LoginUser extends Component {
   }
 }
 
-export default LoginUser;
+export const mapDispatchToProps = dispatch => ({
+  handleLogin: (user) => dispatch(updateUser(user))
+});
+
+export default connect(null, mapDispatchToProps)(LoginUser);
