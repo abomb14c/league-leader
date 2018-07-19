@@ -1,8 +1,18 @@
 import React from 'react';
 import './navigation.css'
 import { NavLink } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { logOutUser } from '../../actions/updateUser/updateUser';
 
-const Navigation = () => {
+const Navigation = (props) => {
+  const signOutBtn = (
+    <NavLink to='/' 
+      className="sign-out"
+      onClick={props.handleLogout}>
+      Sign Out
+    </NavLink>
+  );
+
   return (
     <div className="nav">
       <div className="logo"></div>
@@ -13,12 +23,23 @@ const Navigation = () => {
         <NavLink activeClassName="active" to="/leagues">
           Leagues
         </NavLink>
-        <NavLink activeClassName="active" to="/login">
-          Login
-        </NavLink>
+      { 
+        props.user.user_id ? 
+          signOutBtn
+          :
+          <NavLink to="/login">Login</NavLink>
+      }
       </div>
     </div>
   )
 }
 
-export default Navigation; 
+export const mapStateToProps = state => ({
+  user: state.user
+})
+
+export const mapDispatchToProps = dispatch => ({
+  handleLogout: () => dispatch(logOutUser())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navigation); 

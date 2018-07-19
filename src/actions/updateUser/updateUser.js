@@ -4,3 +4,9 @@ export const updateUser = user => {
     user_id: user.email
   };
 };
+
+export const logOutUser = () => {
+  return {
+    type: "LOGOUT_USER"
+  }
+}
