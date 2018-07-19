@@ -1,10 +1,11 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
-export class LoginUser extends Component {
+export class CreateUser extends Component {
   constructor(props){
     super(props)
 
     this.state = {
+      name: '',
       email: '',
       password: ''
     }
@@ -20,9 +21,17 @@ export class LoginUser extends Component {
   render() {
     return (
       <form>
-        <h3>Login</h3>
+        <h3>Create Account</h3>
         <input
-          className="login-user"
+          className="create-user"
+          type="text"
+          name="name"
+          value={this.state.name}
+          placeholder="Name"
+          onChange={this.handleChange}
+        />
+        <input
+          className="create-user"
           type="text"
           name="email"
           value={this.state.email}
@@ -30,17 +39,17 @@ export class LoginUser extends Component {
           onChange={this.handleChange}
         />
         <input
-          className="login-user"
+          className="create-user"
           type="password"
           name="password"
           value={this.state.password}
           placeholder="Password"
           onChange={this.handleChange}
         />
-        <button>Login</button>
+        <button>Create Account</button>
       </form>
     )
   }
 }
 
-export default LoginUser;
+export default CreateUser;
