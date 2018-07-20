@@ -1,9 +1,10 @@
 import React from 'react'
 import CreateLeague from '../../containers/CreateLeague/CreateLeague';
+import './leagues.css'
 
 const Leagues = () => {
   return (
-    <div>leagues
+    <div className="leagues-container">
       <CreateLeague />
     </div>
   )
