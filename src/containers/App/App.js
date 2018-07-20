@@ -5,17 +5,14 @@ import { connect } from 'react-redux'
 import Navigation from '../../components/Navigation/Navigation';
 import Leagues from '../../components/Leagues/Leagues';
 import Login from '../../components/Login/Login';
+import Home from '../Home/Home';
 import { fetchEnglandScores } from '../../apiCalls/apiCalls';
 import {updateEnglishSoccer} from '../../actions/handleSoccer/handleSoccer';
 
 class App extends Component {
-  constructor(props){
-    super(props)
-  }
 
   getSoccerData = async () => {
     const soccerStats = await fetchEnglandScores();
-    console.log(soccerStats);
     await this.props.handleEnglishSoccer(soccerStats)
   }
 
@@ -44,7 +41,7 @@ class App extends Component {
         />
         <Route
           exact path="/"
-          component={Leagues}
+          component={Home}
         />
         </Switch>
       </div>
