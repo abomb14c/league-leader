@@ -1,0 +1,32 @@
+.create-league-button {
+  border: none;
+  background: none;
+  height: 200px;
+  margin-bottom: 10%;
+  width: 60%;
+}
+
+.create-button-logo {
+  background-image: url('../../assets/plus.svg');
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100px;
+  width: 100%;
+}
+
+.create-league-container {
+  align-items: center;
+  background-color: #3B3738;
+  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.30);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 200px;
+  width: 20%;
+}
+
+.create-league-title {
+  color: #FDF3E7;
+  font-weight: 200;
+}
