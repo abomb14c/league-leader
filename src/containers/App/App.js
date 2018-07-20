@@ -5,8 +5,19 @@ import { connect } from 'react-redux'
 import Navigation from '../../components/Navigation/Navigation';
 import Leagues from '../../components/Leagues/Leagues';
 import Login from '../../components/Login/Login';
+import { fetchEnglandScores } from '../../apiCalls/apiCalls';
 
 class App extends Component {
+
+
+  getSoccerData = async () => {
+    const soccerStats = await fetchEnglandScores();
+  }
+
+  componentDidMount = () => {
+    this.getSoccerData();
+  }
+
   render() {
     return (
       <div className="App">
