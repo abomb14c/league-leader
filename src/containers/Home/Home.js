@@ -12,6 +12,7 @@ export const Home = (props) => {
 
   return (
     <div className="home-container">
+      <h1 className="home-title">Current Standings</h1>
       <div className="epl-container">
         <div className="epl-header">
           <h3 className="header-desc">Name</h3>
