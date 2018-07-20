@@ -12,6 +12,7 @@ class App extends Component {
 
   getSoccerData = async () => {
     const soccerStats = await fetchEnglandScores();
+    console.log(soccerStats);
   }
 
   componentDidMount = () => {
