@@ -11,11 +11,16 @@ export const EnglishCard = (props) => {
 
   return (
     <div className="english-card">
-      <h3 className="english-title">{name}</h3>
-      <h3 className="english-rank">{rank}</h3>
-      <h3 className="english-wins">{wins}</h3>
-      <h3 className="english-losses">{losses}</h3>
-      <h3 className="english-points">{points}</h3>
+      <div className="english-title-container">
+        <h3 className="english-title english-desc">{name}</h3>
+      </div>
+      <h3 className="english-rank english-desc">{rank}</h3>
+      <div className="english-record-container">
+        <h3 className="english-wins english-desc">{wins}-</h3>
+        <h3 className="english-losses english-desc">{losses}-</h3>
+        <h3 className="english-draws english-desc">{draws}</h3>
+      </div>
+      <h3 className="english-points english-desc">{points}</h3>
     </div>
   )
 }
