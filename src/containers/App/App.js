@@ -7,10 +7,9 @@ import Leagues from '../../components/Leagues/Leagues';
 import Login from '../../components/Login/Login';
 import Home from '../Home/Home';
 import SetupLeague from '../SetupLeague/SetupLeague';
+import DraftSection from '../DraftSection/DraftSection';
 import { fetchEnglandScores } from '../../apiCalls/apiCalls';
 import {updateEnglishSoccer} from '../../actions/handleSoccer/handleSoccer';
-
-
 
 class App extends Component {
 
@@ -31,7 +30,7 @@ class App extends Component {
         </header>
         <Switch>
         <Route
-          exact path="/login"
+          exact path= "/login"
           render={() => (
             this.props.user.user_id ?
               <Redirect to="/" /> :
@@ -39,16 +38,24 @@ class App extends Component {
           )}
         />
         <Route
-          exact path="/leagues"
+          exact path= "/leagues"
           component={Leagues} 
         />
         <Route
-          exact path="/"
+          exact path= "/"
           component={Home}
         />
         <Route 
-          exact path ="/setupleague"
-          component={SetupLeague}
+          exact path= "/setupleague"
+          render={() => (
+            this.props.league.name ?
+            <Redirect to="/draft" /> :
+            <SetupLeague />
+          )}
+        />
+        <Route
+          exact path="/draft"
+          component={DraftSection}
         />
         </Switch>
       </div>
@@ -57,7 +64,8 @@ class App extends Component {
 }
 
 export const mapStateToProps = state => ({
-  user: state.user
+  user: state.user,
+  league: state.league
 })
 
 export const mapDispatchToProps = dispatch => ({
