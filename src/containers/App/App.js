@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Route, Redirect, Switch, withRouter } from 'react-router-dom';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 import Navigation from '../../components/Navigation/Navigation';
 import Leagues from '../../components/Leagues/Leagues';
 import Login from '../../components/Login/Login';

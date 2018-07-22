@@ -1,4 +1,5 @@
 import React, { Component } from 'react'; 
+import { connect } from 'react-redux';
 
 export class SetupLeague extends Component {
   constructor(props){
@@ -18,4 +19,8 @@ export class SetupLeague extends Component {
   }
 }
 
-export default SetupLeague; 
+export const mapStateToProps = state => ({
+ EPL: state.EPL
+})
+
+export default connect(mapStateToProps,null)(SetupLeague); 
