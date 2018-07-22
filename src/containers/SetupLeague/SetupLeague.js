@@ -24,7 +24,7 @@ export class SetupLeague extends Component {
   }
   
   closeMenu = (event) => {
-    if (!this.dropdownMenu.contains(event.target)) {
+    if (!this.dropdownMenu.contains(event.target) || this.state.league.length) {
       this.setState({ showMenu: false }, () => {
         document.removeEventListener('click', this.closeMenu);
       });   
