@@ -1,6 +1,6 @@
 import React, { Component } from 'react'; 
 
-export class SetupLeauge extends Component {
+export class SetupLeague extends Component {
   constructor(props){
     super(props)
 

@@ -6,8 +6,11 @@ import Navigation from '../../components/Navigation/Navigation';
 import Leagues from '../../components/Leagues/Leagues';
 import Login from '../../components/Login/Login';
 import Home from '../Home/Home';
+import SetupLeague from '../SetupLeague/SetupLeague';
 import { fetchEnglandScores } from '../../apiCalls/apiCalls';
 import {updateEnglishSoccer} from '../../actions/handleSoccer/handleSoccer';
+
+
 
 class App extends Component {
 
@@ -42,6 +45,10 @@ class App extends Component {
         <Route
           exact path="/"
           component={Home}
+        />
+        <Route 
+          exact path ="/setupleague"
+          component={SetupLeague}
         />
         </Switch>
       </div>

@@ -1,5 +1,6 @@
 import React from 'react';  
 import { icon } from '../../assets/plus.svg';
+import { Link } from 'react-router-dom'
 import './create-league.css';
  
 export const CreateLeague = () => {
@@ -7,10 +8,17 @@ export const CreateLeague = () => {
     <div className="create-league-container">
       <h3 className="create-league-title">Create A New League</h3>
       <button className="create-league-button">
-        <div className="create-button-logo"></div>
+        <Link to={'/setupleague'}>
+          <div className="create-button-logo"></div>
+        </Link>
       </button>
     </div>
   )
 }
 
 export default CreateLeague
+
+
+{/* <Link to={`/unicorns/${unicorn.id}`} key={unicorn.type + i}>
+<img src={unicorn.image} className='app-img' />
+</Link> */}
