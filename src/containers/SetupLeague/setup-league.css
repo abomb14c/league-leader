@@ -76,6 +76,10 @@
   width: 52%;
 }
 
+.submit-setup:disabled {
+  background-color: #636e72;
+}
+
 .setup-title {
   color: #FDF3E7;
   font-size: 28px;

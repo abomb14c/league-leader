@@ -53,6 +53,11 @@ export class SetupLeague extends Component {
   }
 
   render() {
+
+    const isInvalid = 
+    this.state.leagueName === "" ||
+    this.state.league=== "";
+
     return (
       <div className="setup-section">
         <div className="setup-container">
@@ -89,7 +94,7 @@ export class SetupLeague extends Component {
                 null
               )
           }
-          <button onSubmit={this.handleSubmit} className="submit-setup"
+          <button disabled={isInvalid} onSubmit={this.handleSubmit} className="submit-setup"
           >Create League</button>
         </div>
       </div>
