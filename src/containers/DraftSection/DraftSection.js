@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import EnglishCard from '../../components/EnglishCard/EnglishCard';
-
+import DraftCard from '../../components/DraftCard/DraftCard';
 export const DraftSection = (props) => {
   const {
     league,
@@ -10,7 +10,7 @@ export const DraftSection = (props) => {
 
   const eplTeams = EPL.map((team, index) => {
     return (
-      <EnglishCard {...team} key={index} />
+      <DraftCard name={team.name} key={index} />
     )
   })
 
