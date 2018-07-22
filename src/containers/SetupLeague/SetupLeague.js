@@ -1,5 +1,6 @@
 import React, { Component } from 'react'; 
 import { connect } from 'react-redux';
+import { createLeague } from '../../actions/updateLeague/updateLeague';
 import './setup-league.css';
 
 export class SetupLeague extends Component {
@@ -39,7 +40,12 @@ export class SetupLeague extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-
+    const leagueInfo = {
+     league: this.state.league,
+     name: this.state.leagueName
+    }
+    
+    this.props.createNewLeague(leagueInfo);
   }
 
   setEnglish = event => {
@@ -94,7 +100,7 @@ export class SetupLeague extends Component {
                 null
               )
           }
-          <button disabled={isInvalid} onSubmit={this.handleSubmit} className="submit-setup"
+          <button disabled={isInvalid} onClick={this.handleSubmit} className="submit-setup"
           >Create League</button>
         </div>
       </div>
@@ -103,8 +109,10 @@ export class SetupLeague extends Component {
 }
 
 
-export const mapStateToProps = state => ({
- EPL: state.EPL
-})
 
-export default connect(mapStateToProps,null)(SetupLeague); 
+
+export const mapDispatchToProps = dispatch => ({
+  createNewLeague: leagueInfo => dispatch(createLeague(leagueInfo))
+});
+
+export default connect(null, mapDispatchToProps)(SetupLeague); 
