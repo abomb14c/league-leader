@@ -1,18 +1,31 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import EnglishCard from '../../components/EnglishCard/EnglishCard';
 
-export class DraftSection extends Component {
-  constructor(props){
-    super(props)
+export const DraftSection = (props) => {
+  const {
+    league,
+    EPL
+  } = props
 
-  }
-
-  render() {
+  const eplTeams = EPL.map((team, index) => {
     return (
-      <div>
-        hey
-      </div>
+      <EnglishCard {...team} key={index} />
     )
-  }
+  })
+
+  return (
+    <div>
+      hey
+      {eplTeams}
+    </div>
+  )
 }
 
-export default DraftSection;
+
+export const mapStateToProps = state => ({
+  league: state.league,
+  EPL: state.EPL
+});
+
+export default connect(mapStateToProps,null)(DraftSection);
