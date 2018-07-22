@@ -6,7 +6,9 @@ export class SetupLeague extends Component {
     super(props)
 
     this.state = {
-      showMenu: false
+      showMenu: false,
+      leagueName: '',
+
     }
   }
 
@@ -26,13 +28,31 @@ export class SetupLeague extends Component {
     }
   }
 
+  handleChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
+
+  handleSubmit = event => {
+    event.preventDefault();
+
+  }
+
   render() {
     return (
       <div>
+        <h3>Setup Your League</h3>
+        <input
+        name="leagueName"
+        value={this.state.leagueName}
+        onChange={this.handleChange}
+        placeholder="League Name"
+        />
         <button onClick={this.showMenu}>
           Pick A League
         </button>
-        
         {
           this.state.showMenu
             ? (
@@ -50,6 +70,7 @@ export class SetupLeague extends Component {
               null
             )
         }
+        <button onSubmit={this.handleSubmit}>Create League</button>
       </div>
     );
   }
