@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import EnglishCard from '../../components/EnglishCard/EnglishCard';
 import DraftCard from '../../components/DraftCard/DraftCard';
+import './draft-section.css';
+
 export const DraftSection = (props) => {
   const {
     league,
@@ -15,9 +16,13 @@ export const DraftSection = (props) => {
   })
 
   return (
-    <div>
-      hey
-      {eplTeams}
+    <div className="draft-section">
+      <div className="draft-teams">
+        <div className="draft-teams-title">
+          <h3 className="title-desc">Available Teams</h3>
+        </div>
+        {eplTeams}
+      </div>
     </div>
   )
 }
