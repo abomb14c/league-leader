@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import DraftCard from '../../components/DraftCard/DraftCard';
 import './draft-section.css';
 import UserDraftCard from '../UserDraftCard/UserDraftCard';
+import { Draggable, Droppable } from 'react-drag-and-drop';
 
 export const DraftSection = (props) => {
   const {
@@ -12,7 +13,9 @@ export const DraftSection = (props) => {
 
   const eplTeams = EPL.map((team, index) => {
     return (
-      <DraftCard name={team.name} key={index} />
+      <Draggable type="team" data={team.name} key={index} >
+        <DraftCard name={team.name} />
+      </Draggable>
     )
   })
 
@@ -32,7 +35,7 @@ export const DraftSection = (props) => {
           </div>
           {eplTeams}
         </div>
-        <UserDraftCard />
+          <UserDraftCard />
       </div>
     </div>
   )
