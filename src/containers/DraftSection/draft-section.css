@@ -2,11 +2,13 @@
   align-items: center;
   display: flex;
   flex-direction: column;
+  height: 1200px;
   width: 100%;
 }
 
 .draft-section {
   display: flex;
+  /* justify-content: space-between; */
   padding-left: 5%;
   width: 100%;
 }

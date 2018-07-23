@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import DraftCard from '../../components/DraftCard/DraftCard';
 import './draft-section.css';
+import UserDraftCard from '../UserDraftCard/UserDraftCard';
 
 export const DraftSection = (props) => {
   const {
@@ -31,6 +32,7 @@ export const DraftSection = (props) => {
           </div>
           {eplTeams}
         </div>
+        <UserDraftCard />
       </div>
     </div>
   )
