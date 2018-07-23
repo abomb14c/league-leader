@@ -10,6 +10,7 @@ export class SetupLeague extends Component {
     this.state = {
       showMenu: false,
       leagueName: '',
+      leagueBet: '',
       league: ''
 
     }
@@ -41,8 +42,9 @@ export class SetupLeague extends Component {
   handleSubmit = event => {
     event.preventDefault();
     const leagueInfo = {
-     league: this.state.league,
-     name: this.state.leagueName
+     league_type: this.state.league,
+     name: this.state.leagueName,
+     bet: this.state.leagueBet
     }
     
     this.props.createNewLeague(leagueInfo);
@@ -73,6 +75,13 @@ export class SetupLeague extends Component {
           value={this.state.leagueName}
           onChange={this.handleChange}
           placeholder="League Name"
+          className="setup-input"
+          />
+          <input
+          name="leagueBet"
+          value={this.state.leagueBet}
+          onChange={this.handleChange}
+          placeholder="Place Your Bet"
           className="setup-input"
           />
           <button onClick={this.showMenu}

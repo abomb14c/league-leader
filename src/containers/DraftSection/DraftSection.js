@@ -16,12 +16,21 @@ export const DraftSection = (props) => {
   })
 
   return (
-    <div className="draft-section">
-      <div className="draft-teams">
-        <div className="draft-teams-title">
-          <h3 className="title-desc">Available Teams</h3>
+    <div className="draft-container">
+      <div className="league-info-container">
+        <h1 className="league-title">{league.name}</h1>
+        <div className="league-bet-container">
+          <h3 className="league-bet-desc">Wager:</h3>
+          <h3 className="league-bet">{league.bet}</h3>
         </div>
-        {eplTeams}
+      </div>
+      <div className="draft-section">
+        <div className="draft-teams">
+          <div className="draft-teams-title">
+            <h3 className="title-desc">Available Teams</h3>
+          </div>
+          {eplTeams}
+        </div>
       </div>
     </div>
   )
