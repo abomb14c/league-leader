@@ -1,0 +1,71 @@
+.draft-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 1200px;
+  width: 100%;
+}
+
+.draft-section {
+  display: flex;
+  /* justify-content: space-between; */
+  padding-left: 5%;
+  width: 100%;
+}
+
+.draft-teams {
+  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.30);
+  display: flex;
+  flex-direction: column;
+  height: 905px;
+  margin-left: 5%;
+  width: 17%;
+}
+
+.draft-teams-title {
+  align-items: center;
+  border-bottom: 2px solid #C63D0F;
+  background-color: #3B3738;
+  display: flex;
+  height: 42px;
+  padding-left: 2%;
+}
+
+.league-info-container {
+  align-items: center;
+  background-color: #3B3738;
+  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.30);
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  margin-bottom: 2%;
+  width: 25%;
+ 
+}
+
+.title-desc {
+  color: #FDF3E7;
+}
+
+.league-bet {
+  color: #7E8F7C;
+  font-weight: 200;
+  margin-top: 3%;
+}
+
+.league-bet-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.league-bet-desc {
+  color: #FDF3E7;
+  font-weight: 200;
+  margin: 0;
+}
+
+.league-title {
+  color: #FDF3E7;
+}
