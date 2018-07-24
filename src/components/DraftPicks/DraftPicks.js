@@ -3,8 +3,8 @@ import React from 'react';
 const DraftPicks = ({teams}) => {
   const displayPicks = teams.map(team => {
     return (
-      <div>
-        {team.team}
+      <div className="draft-card draft-pick">
+        <h3 className="draft-name">{team.team}</h3>
       </div>
     )
   })

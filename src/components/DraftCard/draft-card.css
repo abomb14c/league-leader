@@ -12,3 +12,7 @@
   font-weight: 200;
   color: #FDF3E7;
 }
+
+.draft-pick {
+  border-bottom: 1px solid #C63D0F;
+}
