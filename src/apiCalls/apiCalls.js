@@ -10,3 +10,17 @@ export const fetchEnglandScores = async () => {
  return cleanEnglishSoccer(soccerData);
 }
 
+export const addUserFetch = async (user) => {
+  const url = "http://localhost:3000/users/new";
+
+  const response = await fetch(url, {
+    method: "POST",
+    body: JSON.stringify(user),
+    headers: {
+      Accept: 'application/json',
+      "Content-Type": "application/json"
+    }
+  });
+    const userData = await response.json();
+    return userData;
+}

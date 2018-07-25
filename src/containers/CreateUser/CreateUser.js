@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { addUserFetch } from '../../apiCalls/apiCalls';
 import './create-user.css';
 
 export class CreateUser extends Component {
@@ -18,17 +19,22 @@ export class CreateUser extends Component {
       [name]: value
     });
   };
+
+  handleSubmit = async (event) => {
+    const response = await addUserFetch(this.state);
+    console.log(response)
+  }
   
   render() {
     return (
-      <form className="create-user-form">
+      <form className="create-user-form" onSubmit={this.handleSubmit}>
         <h3 className="login-title">Create Account</h3>
         <input
           className="create-user"
           type="text"
           name="name"
           value={this.state.name}
-          placeholder="Name"
+          placeholder="username"
           onChange={this.handleChange}
         />
         <input
