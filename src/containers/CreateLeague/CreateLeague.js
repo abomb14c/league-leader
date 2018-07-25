@@ -16,9 +16,6 @@ export const CreateLeague = () => {
   )
 }
 
-export default CreateLeague
+export default CreateLeague;
 
 
-{/* <Link to={`/unicorns/${unicorn.id}`} key={unicorn.type + i}>
-<img src={unicorn.image} className='app-img' />
-</Link> */}
