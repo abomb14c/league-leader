@@ -1,7 +1,8 @@
 export const updateUser = user => {
   return {
     type: "ADD_USER",
-    user_id: user.email
+    userId: user.userId,
+    username: user.username
   };
 };
 

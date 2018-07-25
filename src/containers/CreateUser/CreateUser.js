@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { addUserFetch } from '../../apiCalls/apiCalls';
+import { updateUser } from '../../actions/updateUser/updateUser';
 import './create-user.css';
 
 export class CreateUser extends Component {
@@ -7,7 +9,7 @@ export class CreateUser extends Component {
     super(props)
 
     this.state = {
-      name: '',
+      username: '',
       email: '',
       password: ''
     }
@@ -21,8 +23,11 @@ export class CreateUser extends Component {
   };
 
   handleSubmit = async (event) => {
+    event.preventDefault();
     const response = await addUserFetch(this.state);
     console.log(response)
+    this.props.handleSignup({userId: response.userId, username: this.state.username})
+
   }
   
   render() {
@@ -32,8 +37,8 @@ export class CreateUser extends Component {
         <input
           className="create-user"
           type="text"
-          name="name"
-          value={this.state.name}
+          name="username"
+          value={this.state.username}
           placeholder="username"
           onChange={this.handleChange}
         />
@@ -53,10 +58,14 @@ export class CreateUser extends Component {
           placeholder="Password"
           onChange={this.handleChange}
         />
-        <button className="create-user-button">Create Account</button>
+        <button type="submit" className="create-user-button">Create Account</button>
       </form>
     )
   }
 }
 
-export default CreateUser;
+export const mapDispatchToProps = dispatch => ({
+  handleSignup: (user) => dispatch(updateUser(user))
+})
+
+export default connect(null, mapDispatchToProps)(CreateUser);

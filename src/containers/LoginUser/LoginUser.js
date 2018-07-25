@@ -8,7 +8,7 @@ export class LoginUser extends Component {
     super(props)
 
     this.state = {
-      email: '',
+      username: '',
       password: ''
     }
   }
@@ -33,8 +33,8 @@ export class LoginUser extends Component {
           className="login-user"
           type="text"
           name="email"
-          value={this.state.email}
-          placeholder="Email"
+          value={this.state.username}
+          placeholder="username"
           onChange={this.handleChange}
         />
         <input

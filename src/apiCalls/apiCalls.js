@@ -17,7 +17,6 @@ export const addUserFetch = async (user) => {
     method: "POST",
     body: JSON.stringify(user),
     headers: {
-      Accept: 'application/json',
       "Content-Type": "application/json"
     }
   });
