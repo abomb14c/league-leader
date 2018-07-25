@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { updateUser } from '../../actions/updateUser/updateUser';
+import { fetchUser } from '../../apiCalls/apiCalls';
 import './login-user.css';
 
 export class LoginUser extends Component {
@@ -20,9 +21,10 @@ export class LoginUser extends Component {
     });
   };
   
-  handleSubmit = event => {
+  handleSubmit = async event => {
     event.preventDefault();
-    this.props.handleLogin(this.state)
+    const response = await fetchUser(this.state);
+    this.props.handleLogin({userId: response.id, username: response.username});
   }
 
   render() {
@@ -32,7 +34,7 @@ export class LoginUser extends Component {
         <input
           className="login-user"
           type="text"
-          name="email"
+          name="username"
           value={this.state.username}
           placeholder="username"
           onChange={this.handleChange}
