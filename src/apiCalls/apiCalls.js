@@ -1,4 +1,4 @@
-import  soccerKey  from '../apiKeys';
+import {soccerKey, nbaKey} from '../apiKeys';
 import { cleanEnglishSoccer } from '../cleaner/cleaner';
 
 export const fetchEnglandScores = async () => {
@@ -8,6 +8,15 @@ export const fetchEnglandScores = async () => {
   const soccerData = dirtySoccerData.standings[0].groups[0].team_standings;
 
   return cleanEnglishSoccer(soccerData);
+};
+
+export const fetchNbaTeams = async () => {
+
+  const url = `http://api.sportradar.us/nba/trial/v4/en/seasons/2017/REG/standings.json?api_key=${nbaKey}`;
+  const response = await fetch(url);
+  const nbaData = await response.json();
+  
+  console.log(nbaData);
 };
 
 export const addUserFetch = async (user) => {
