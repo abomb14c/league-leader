@@ -10,14 +10,19 @@ import SetupLeague from '../SetupLeague/SetupLeague';
 import DraftSection from '../DraftSection/DraftSection';
 import { fetchEnglandScores, fetchNbaTeams } from '../../apiCalls/apiCalls';
 import {updateEnglishSoccer} from '../../actions/handleSoccer/handleSoccer';
+import {addNBA} from '../../actions/handleNba/handleNba';
 
 class App extends Component {
 
   getSoccerData = async () => {
     const soccerStats = await fetchEnglandScores();
     await this.props.handleEnglishSoccer(soccerStats);
-    const nba = await fetchNbaTeams();
-    console.log(nba);
+ 
+  }
+
+  getNbaData = async () => {
+    const nbaStats = await fetchNbaTeams();
+
   }
 
   componentDidMount = () => {
@@ -72,7 +77,8 @@ export const mapStateToProps = state => ({
 
 export const mapDispatchToProps = dispatch => ({
   handleEnglishSoccer: (englishSoccerStats) => 
-    dispatch(updateEnglishSoccer(englishSoccerStats))
+    dispatch(updateEnglishSoccer(englishSoccerStats)),
+  handleNba: nbaStats => dispatch(addNBA(nbaStats))
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
