@@ -1,7 +1,7 @@
 import React, { Component } from 'react'; 
 import { connect } from 'react-redux';
 import { createLeague } from '../../actions/updateLeague/updateLeague';
-import { handleDraftCards } from '../../actions/handleDraftCards/handleDraftCards'
+import { addDraftCards } from '../../actions/handleDraftCards/handleDraftCards';
 import './setup-league.css';
 
 export class SetupLeague extends Component {
@@ -51,7 +51,7 @@ export class SetupLeague extends Component {
 
     if (this.state.league === "EPL"){
       const draftTeams = this.props.EPL.map(team => {
-        return team.name;
+        return {name:team.name};
       });
       this.props.handleDraftTeams(draftTeams);
     }
@@ -132,7 +132,7 @@ export const mapStateToProps = state => ({
 
 export const mapDispatchToProps = dispatch => ({
   createNewLeague: leagueInfo => dispatch(createLeague(leagueInfo)),
-  handleDraftTeams: draftTeams => dispatch(handleDraftCards(draftTeams))
+  handleDraftTeams: draftTeams => dispatch(addDraftCards(draftTeams))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SetupLeague); 

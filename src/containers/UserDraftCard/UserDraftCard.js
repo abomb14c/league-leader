@@ -1,9 +1,9 @@
 import React, {Component } from 'react';
 import {connect} from 'react-redux';
 import './user-draft-card.css';
-import { Draggable, Droppable } from 'react-drag-and-drop';
-// import DraftCard from '../../components/DraftCard/DraftCard';
+import { Droppable } from 'react-drag-and-drop';
 import DraftPicks from '../../components/DraftPicks/DraftPicks';
+import { removeTeam } from '../../actions/handleDraftCards/handleDraftCards';
 
 export class UserDraftCard extends Component {
   constructor(props){
@@ -18,6 +18,7 @@ export class UserDraftCard extends Component {
   handleDrop = (data) => {
     console.log(data)
     this.setState({teams: [...this.state.teams, data]});
+    this.props.handleTeam(data);
   }
 
   handleDragover = (event) => {
@@ -49,4 +50,8 @@ export const mapStateToProps = state => ({
   EPL: state.EPL
 });
 
-export default connect(mapStateToProps, null)(UserDraftCard);
+export const mapDispatchToProps = dispatch => ({
+handleTeam: team => dispatch(removeTeam(team))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserDraftCard);

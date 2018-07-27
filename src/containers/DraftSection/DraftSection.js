@@ -8,10 +8,10 @@ import { Draggable, Droppable } from 'react-drag-and-drop';
 export const DraftSection = (props) => {
   const {
     league,
-    EPL
+    draftTeams
   } = props;
 
-  const eplTeams = EPL.map((team, index) => {
+  const displayDraftTeams = draftTeams.map((team, index) => {
    
     return (
       <Draggable type="team" data={team.name} key={index} >
@@ -34,7 +34,7 @@ export const DraftSection = (props) => {
           <div className="draft-teams-title">
             <h3 className="title-desc">Available Teams</h3>
           </div>
-          {eplTeams}
+          {displayDraftTeams}
         </div>
         <UserDraftCard />
       </div>
@@ -45,7 +45,8 @@ export const DraftSection = (props) => {
 
 export const mapStateToProps = state => ({
   league: state.league,
-  EPL: state.EPL
+  EPL: state.EPL,
+  draftTeams: state.draftTeams
 });
 
 export default connect(mapStateToProps, null)(DraftSection);
