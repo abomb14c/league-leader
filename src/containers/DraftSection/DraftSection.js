@@ -9,15 +9,16 @@ export const DraftSection = (props) => {
   const {
     league,
     EPL
-  } = props
+  } = props;
 
   const eplTeams = EPL.map((team, index) => {
+   
     return (
       <Draggable type="team" data={team.name} key={index} >
-        <DraftCard name={team.name} />
+        <DraftCard name={team.name}  />
       </Draggable>
-    )
-  })
+    );
+  });
 
   return (
     <div className="draft-container">
@@ -35,11 +36,11 @@ export const DraftSection = (props) => {
           </div>
           {eplTeams}
         </div>
-          <UserDraftCard />
+        <UserDraftCard />
       </div>
     </div>
-  )
-}
+  );
+};
 
 
 export const mapStateToProps = state => ({
@@ -47,4 +48,4 @@ export const mapStateToProps = state => ({
   EPL: state.EPL
 });
 
-export default connect(mapStateToProps,null)(DraftSection);
+export default connect(mapStateToProps, null)(DraftSection);

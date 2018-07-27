@@ -7,16 +7,17 @@ import DraftPicks from '../../components/DraftPicks/DraftPicks';
 
 export class UserDraftCard extends Component {
   constructor(props){
-    super(props)
+    super(props);
 
     this.state = {
       teams: []
 
-    }
+    };
   }
 
   handleDrop = (data) => {
-    this.setState({teams: [...this.state.teams, data]})
+    console.log(data)
+    this.setState({teams: [...this.state.teams, data]});
   }
 
   handleDragover = (event) => {
@@ -28,17 +29,17 @@ export class UserDraftCard extends Component {
     return (
       <div className="user-card">
         <div className="user-title-container">
-        <h3 className="user-draft-title">{this.props.user.user_id}</h3>
+          <h3 className="user-draft-title">{this.props.user.user_id}</h3>
         </div>
         <Droppable
-            types={['team']} 
-            onDrop={this.handleDrop}>
+          types={['team']} 
+          onDrop={this.handleDrop}>
           <div id="target"  onDragOver={this.handleDragover} className="draft-board">
             <DraftPicks teams={this.state.teams} />
           </div>
         </Droppable>
       </div>
-    )
+    );
   }
 }
 
@@ -46,6 +47,6 @@ export class UserDraftCard extends Component {
 export const mapStateToProps = state => ({
   user: state.user,
   EPL: state.EPL
-})
+});
 
-export default connect(mapStateToProps,null)(UserDraftCard);
+export default connect(mapStateToProps, null)(UserDraftCard);

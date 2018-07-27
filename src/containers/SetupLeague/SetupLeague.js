@@ -1,11 +1,12 @@
 import React, { Component } from 'react'; 
 import { connect } from 'react-redux';
 import { createLeague } from '../../actions/updateLeague/updateLeague';
+import { handleDraftCards } from '../../actions/handleDraftCards/handleDraftCards'
 import './setup-league.css';
 
 export class SetupLeague extends Component {
   constructor(props){
-    super(props)
+    super(props);
 
     this.state = {
       showMenu: false,
@@ -13,7 +14,7 @@ export class SetupLeague extends Component {
       leagueBet: '',
       league: ''
 
-    }
+    };
   }
 
   showMenu = (event) => {
@@ -42,22 +43,28 @@ export class SetupLeague extends Component {
   handleSubmit = event => {
     event.preventDefault();
     const leagueInfo = {
-     league_type: this.state.league,
-     name: this.state.leagueName,
-     bet: this.state.leagueBet
-    }
-    
+      league_type: this.state.league,
+      name: this.state.leagueName,
+      bet: this.state.leagueBet
+    };
     this.props.createNewLeague(leagueInfo);
+
+    if (this.state.league === "EPL"){
+      const draftTeams = this.props.EPL.map(team => {
+        return team.name;
+      });
+      this.props.handleDraftTeams(draftTeams);
+    }
   }
 
   setEnglish = event => {
-    event.preventDefault()
-    this.setState({ league: "EPL" })
+    event.preventDefault();
+    this.setState({ league: "EPL" });
   }
 
   setNBA = event => {
-    event.preventDefault()
-    this.setState({ league: "NBA" })
+    event.preventDefault();
+    this.setState({ league: "NBA" });
   }
 
   render() {
@@ -71,18 +78,18 @@ export class SetupLeague extends Component {
         <div className="setup-container">
           <h3 className="setup-title">Setup Your League</h3>
           <input
-          name="leagueName"
-          value={this.state.leagueName}
-          onChange={this.handleChange}
-          placeholder="League Name"
-          className="setup-input"
+            name="leagueName"
+            value={this.state.leagueName}
+            onChange={this.handleChange}
+            placeholder="League Name"
+            className="setup-input"
           />
           <input
-          name="leagueBet"
-          value={this.state.leagueBet}
-          onChange={this.handleChange}
-          placeholder="Place Your Bet"
-          className="setup-input"
+            name="leagueBet"
+            value={this.state.leagueBet}
+            onChange={this.handleChange}
+            placeholder="Place Your Bet"
+            className="setup-input"
           />
           <button onClick={this.showMenu}
             className="league-menu">
@@ -117,11 +124,15 @@ export class SetupLeague extends Component {
   }
 }
 
+export const mapStateToProps = state => ({
+  EPL: state.EPL
+});
 
 
 
 export const mapDispatchToProps = dispatch => ({
-  createNewLeague: leagueInfo => dispatch(createLeague(leagueInfo))
+  createNewLeague: leagueInfo => dispatch(createLeague(leagueInfo)),
+  handleDraftTeams: draftTeams => dispatch(handleDraftCards(draftTeams))
 });
 
-export default connect(null, mapDispatchToProps)(SetupLeague); 
+export default connect(mapStateToProps, mapDispatchToProps)(SetupLeague); 
