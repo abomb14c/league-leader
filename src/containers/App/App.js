@@ -17,7 +17,7 @@ class App extends Component {
     const soccerStats = await fetchEnglandScores();
     await this.props.handleEnglishSoccer(soccerStats);
     const nba = await fetchNbaTeams();
-    
+    console.log(nba);
   }
 
   componentDidMount = () => {

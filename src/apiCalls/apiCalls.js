@@ -1,5 +1,5 @@
 import {soccerKey, nbaKey} from '../apiKeys';
-import { cleanEnglishSoccer } from '../cleaner/cleaner';
+import { cleanEnglishSoccer, nbaCleaner } from '../cleaner/cleaner';
 
 export const fetchEnglandScores = async () => {
   const url = `https://api.sportradar.us/soccer-t3/eu/en/tournaments/sr:tournament:17/live_standings.json?api_key=${soccerKey}`;
@@ -16,7 +16,7 @@ export const fetchNbaTeams = async () => {
   const response = await fetch(url);
   const nbaData = await response.json();
   
-  console.log(nbaData);
+  return nbaCleaner(nbaData);
 };
 
 export const addUserFetch = async (user) => {
