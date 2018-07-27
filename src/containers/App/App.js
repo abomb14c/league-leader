@@ -22,11 +22,12 @@ class App extends Component {
 
   getNbaData = async () => {
     const nbaStats = await fetchNbaTeams();
-
+    await this.props.handleNba(nbaStats);
   }
 
   componentDidMount = () => {
     this.getSoccerData();
+    this.getNbaData();
   }
 
   render() {
