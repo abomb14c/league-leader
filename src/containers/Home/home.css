@@ -1,4 +1,4 @@
-.home-container{
+.standings-container{
   display: flex;
   height: 1550px;
   width: 100%;
@@ -7,4 +7,10 @@
 .home-title {
   color: #FDF3E7;
   font-weight: 200;
+}
+
+.setup-link {
+  margin: 0;
+  color: #7E8F7C;
+  border-bottom: 1px solid #FDF3E7;
 }
