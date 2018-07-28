@@ -10,6 +10,25 @@ describe('draftTeamReducer', () => {
     expect(result).toEqual(expected);
   });
 
+  it('should return draft teams on action.type of "ADD_TEAMS', () => {
+    
+    const expected = ['', ''];
+
+    const mockState = [];
+    
+    const draftTeams =['', ''];
+
+    const mockAction = {
+      type:"ADD_TEAMS",
+      draftTeams
+    };
+
+    const result = draftTeamReducer(mockState, mockAction);
+
+    expect(result).toEqual(expected);
+
+  });
+
   it('should return all time that dont equal the action.team passed in on typ "REMOVE_TEAM"', () => {
     
     const mockState = [{name:'Arsenal'}, {name:'Chelsea'}];
