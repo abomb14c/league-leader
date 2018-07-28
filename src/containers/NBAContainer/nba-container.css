@@ -18,18 +18,22 @@
   font-weight: 200;
   padding-bottom: 5px;
   padding-right: 10%;
+  padding-left: 2%;
 }
 
 .conference-title-container {
   align-items: center;
-  border-top: 1px solid #C63D0F;
+  border-top: 2px solid #C63D0F;
+  border-bottom: 2px solid #C63D0F;
   background-color: #3B3738;
   display: flex;
+  justify-content: center;
   height: 50px;
   padding-left: 2%;
 }
 
 .conference-name {
   margin: none;
-  color: #FDF3E7;
+  color: #7E8F7C;
+  font-weight: 200;
 }

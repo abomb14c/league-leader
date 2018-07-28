@@ -4,7 +4,9 @@
   background-color: #3B3738;
   display: flex;
   height: 42px;
+  justify-content: space-between;
   padding-left: 2%;
+  padding-right: 10%;
 }
 
 .english-desc {
@@ -28,4 +30,18 @@
 
 .english-points {
   margin-left: 15%;
+}
+
+.nba-team-name {
+  color: #FDF3E7;
+  font-weight: 200;
+}
+
+.nba-record {
+  color: #FDF3E7;
+  font-weight: 200;
+}
+
+.nba-record-container {
+  width: 11%;
 }

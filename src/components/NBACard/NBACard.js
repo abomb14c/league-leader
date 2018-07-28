@@ -11,10 +11,11 @@ const NBACard = (props) => {
   return (
     <div className="nba-card">
       <div className="nba-title-container">
-        <h3 className="team-name">{market} {name}</h3>
+        <h3 className="nba-team-name">{market} {name}</h3>
       </div>
-      <h3 className="record"> {wins}</h3>
-      <h3>{losses}</h3>
+      <div className="nba-record-container">
+        <h3 className="nba-record"> {wins}-{losses}</h3>
+      </div>
     </div>
   );
 };
