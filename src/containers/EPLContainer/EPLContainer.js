@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux'; 
 import EnglishCard from '../../components/EnglishCard/EnglishCard';
 
-export const EPLCard = (props) => {
+export const EPLContainer = (props) => {
   const eplCards = props.EPL.map((team, index) => {
     return (
       <EnglishCard {...team} key={index} />
@@ -30,4 +30,4 @@ export const mapStateToProps = state => ({
   EPL: state.EPL
 });
 
-export default connect(mapStateToProps, null)(EPLCard);
+export default connect(mapStateToProps, null)(EPLContainer);

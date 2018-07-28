@@ -1,4 +1,4 @@
-const intitialState = [];
+const intitialState = {'EASTERN CONFERENCE':[], 'WESTERN CONFERENCE':[]};
 
 const nbaReducer = (state = intitialState, action) => {
   switch (action.type) {

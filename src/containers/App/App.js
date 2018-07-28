@@ -25,9 +25,9 @@ class App extends Component {
     await this.props.handleNba(nbaStats);
   }
 
-  componentDidMount = () => {
-    this.getSoccerData();
-    this.getNbaData();  
+  componentDidMount = async () => {
+    await this.getSoccerData();
+    await this.getNbaData();  
   }
 
   render() {

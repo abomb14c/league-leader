@@ -8,10 +8,10 @@ export const cleanEnglishSoccer = (soccerData) => {
       draws: team.draw,
       points: team.points,
       rank: team.rank
-    }
+    };
   });
   return englishTeams;
-}
+};
 
 export const nbaCleaner = (data) => {
   const conferences = data.conferences.reduce ((conferences, conference) => {
