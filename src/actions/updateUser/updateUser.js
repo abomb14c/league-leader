@@ -9,5 +9,5 @@ export const updateUser = user => {
 export const logOutUser = () => {
   return {
     type: "LOGOUT_USER"
-  }
-}
+  };
+};
