@@ -24,3 +24,9 @@ export const nbaCleaner = (data) => {
   }, {});
   return conferences;
 };
+
+export const nbaDraftCleaner = (NBAData) => {
+  let teams = [];
+  teams.push(...NBAData['EASTERN CONFERENCE'], NBAData['WESTERN CONFERENCE']);
+  return teams; 
+};

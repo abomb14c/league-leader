@@ -23,6 +23,7 @@ class App extends Component {
   getNbaData = async () => {
     const nbaStats = await fetchNbaTeams();
     await this.props.handleNba(nbaStats);
+    console.log(nbaStats)
   }
 
   componentDidMount = async () => {
