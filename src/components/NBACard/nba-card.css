@@ -1,0 +1,31 @@
+.nba-card {
+  align-items: center;
+  border-top: 1px solid #C63D0F;
+  background-color: #3B3738;
+  display: flex;
+  height: 42px;
+  padding-left: 2%;
+}
+
+.english-desc {
+  font-weight: 200;
+  color: #FDF3E7;
+}
+
+.nba-title-container {
+  text-align: left;
+  width: 40%;
+}
+
+.english-rank {
+  margin-left: 16%;
+}
+
+.english-record-container {
+  display: flex;
+  margin-left: 15%;
+}
+
+.english-points {
+  margin-left: 15%;
+}

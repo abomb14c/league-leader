@@ -17,10 +17,22 @@ export const NBAContainer = ({ NBA }) => {
     <div className="nba-container">
       <div className="nba-header">
         <h3 className="header-desc">Name</h3>
-        <h3 className="header-desc record">Record</h3>
+        <h3 className="header-desc nba-record">Record</h3>
       </div>
-      {eastTeams}
-      {westTeams}
+      <div className="conference-container">
+        <div className="conference-title-container">
+          <h3 className="conference-name">Eastern Conference</h3>
+        </div>
+        {eastTeams}
+      </div>
+      <div>
+        <div className="conference-container">
+          <div className="conference-title-container">
+            <h3 className="conference-name">Western Conference</h3>
+          </div>
+        </div>
+        {westTeams}
+      </div>
     </div>
   );
 };
