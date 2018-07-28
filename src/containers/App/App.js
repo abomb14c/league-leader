@@ -27,7 +27,7 @@ class App extends Component {
 
   componentDidMount = () => {
     this.getSoccerData();
-    this.getNbaData();
+    this.getNbaData();  
   }
 
   render() {
