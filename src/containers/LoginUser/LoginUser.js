@@ -1,17 +1,17 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { updateUser } from '../../actions/updateUser/updateUser';
 import { fetchUser } from '../../apiCalls/apiCalls';
 import './login-user.css';
 
 export class LoginUser extends Component {
   constructor(props){
-    super(props)
+    super(props);
 
     this.state = {
       username: '',
       password: ''
-    }
+    };
   }
 
   handleChange = event => {
@@ -49,7 +49,7 @@ export class LoginUser extends Component {
         />
         <button className="login-button">Login</button>
       </form>
-    )
+    );
   }
 }
 
