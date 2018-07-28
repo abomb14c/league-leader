@@ -8,18 +8,27 @@ import Login from '../../components/Login/Login';
 import Home from '../Home/Home';
 import SetupLeague from '../SetupLeague/SetupLeague';
 import DraftSection from '../DraftSection/DraftSection';
-import { fetchEnglandScores } from '../../apiCalls/apiCalls';
+import { fetchEnglandScores, fetchNbaTeams } from '../../apiCalls/apiCalls';
 import {updateEnglishSoccer} from '../../actions/handleSoccer/handleSoccer';
+import {addNBA} from '../../actions/handleNba/handleNba';
 
 class App extends Component {
 
   getSoccerData = async () => {
     const soccerStats = await fetchEnglandScores();
-    await this.props.handleEnglishSoccer(soccerStats)
+    await this.props.handleEnglishSoccer(soccerStats);
+ 
   }
 
-  componentDidMount = () => {
-    this.getSoccerData();
+  getNbaData = async () => {
+    const nbaStats = await fetchNbaTeams();
+    await this.props.handleNba(nbaStats);
+    console.log(nbaStats)
+  }
+
+  componentDidMount = async () => {
+    await this.getSoccerData();
+    await this.getNbaData();  
   }
 
   render() {
@@ -29,34 +38,34 @@ class App extends Component {
           <Navigation />
         </header>
         <Switch>
-        <Route
-          exact path= "/login"
-          render={() => (
-            this.props.user.user_id ?
-              <Redirect to="/" /> :
-              <Login />
-          )}
-        />
-        <Route
-          exact path= "/leagues"
-          component={Leagues} 
-        />
-        <Route
-          exact path= "/"
-          component={Home}
-        />
-        <Route 
-          exact path= "/setupleague"
-          render={() => (
-            this.props.league.name ?
-            <Redirect to="/draft" /> :
-            <SetupLeague />
-          )}
-        />
-        <Route
-          exact path="/draft"
-          component={DraftSection}
-        />
+          <Route
+            exact path= "/login"
+            render={() => (
+              this.props.user.user_id ?
+                <Redirect to="/" /> :
+                <Login />
+            )}
+          />
+          <Route
+            exact path= "/leagues"
+            component={Leagues} 
+          />
+          <Route
+            exact path= "/"
+            component={Home}
+          />
+          <Route 
+            exact path= "/setupleague"
+            render={() => (
+              this.props.league.name ?
+                <Redirect to="/draft" /> :
+                <SetupLeague />
+            )}
+          />
+          <Route
+            exact path="/draft"
+            component={DraftSection}
+          />
         </Switch>
       </div>
     );
@@ -66,11 +75,12 @@ class App extends Component {
 export const mapStateToProps = state => ({
   user: state.user,
   league: state.league
-})
+});
 
 export const mapDispatchToProps = dispatch => ({
   handleEnglishSoccer: (englishSoccerStats) => 
-  dispatch(updateEnglishSoccer(englishSoccerStats))
-})
+    dispatch(updateEnglishSoccer(englishSoccerStats)),
+  handleNba: nbaStats => dispatch(addNBA(nbaStats))
+});
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

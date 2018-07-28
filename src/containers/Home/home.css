@@ -1,46 +1,10 @@
-.epl-container {
-  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.30);
+.home-container{
   display: flex;
-  flex-direction: column;
-  height: 900px;
-  margin-left: 5%;
-  margin-top: 3%;
-  width: 45%;
-}
-
-.epl-header {
-  background-color: #3B3738;
-  border-bottom: 2px solid #C63D0F;
-  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.30);
-  display: flex;
-  color: #FDF3E7;
-  font-weight: 200;
-  padding-bottom: 5px;
-}
-
-.header-desc {
-  font-weight: 600;
-  margin-left: 2%;
-}
-
-.home-container {
-  height: 1200px;
+  height: 1550px;
   width: 100%;
 }
 
 .home-title {
   color: #FDF3E7;
   font-weight: 200;
-}
-
-.points {
-  margin-left: 10%;
-}
-
-.record {
-  margin-left: 10%;
-}
-
-.rank {
-  margin-left: 42%;
 }

@@ -1,5 +1,5 @@
-import  soccerKey  from '../apiKeys';
-import { cleanEnglishSoccer } from '../cleaner/cleaner';
+import {soccerKey, nbaKey} from '../apiKeys';
+import { cleanEnglishSoccer, nbaCleaner } from '../cleaner/cleaner';
 
 export const fetchEnglandScores = async () => {
   const url = `https://api.sportradar.us/soccer-t3/eu/en/tournaments/sr:tournament:17/live_standings.json?api_key=${soccerKey}`;
@@ -8,6 +8,15 @@ export const fetchEnglandScores = async () => {
   const soccerData = dirtySoccerData.standings[0].groups[0].team_standings;
 
   return cleanEnglishSoccer(soccerData);
+};
+
+export const fetchNbaTeams = async () => {
+
+  const url = `http://api.sportradar.us/nba/trial/v4/en/seasons/2017/REG/standings.json?api_key=${nbaKey}`;
+  const response = await fetch(url);
+  const nbaData = await response.json();
+  
+  return nbaCleaner(nbaData);
 };
 
 export const addUserFetch = async (user) => {

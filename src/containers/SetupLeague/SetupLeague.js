@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createLeague } from '../../actions/updateLeague/updateLeague';
 import { addDraftCards } from '../../actions/handleDraftCards/handleDraftCards';
+import { nbaDraftCleaner } from '../../cleaner/cleaner';
 import './setup-league.css';
 
 export class SetupLeague extends Component {
@@ -41,6 +42,7 @@ export class SetupLeague extends Component {
   };
 
   handleSubmit = event => {
+    let draftTeams;
     event.preventDefault();
     const leagueInfo = {
       league_type: this.state.league,
@@ -50,9 +52,13 @@ export class SetupLeague extends Component {
     this.props.createNewLeague(leagueInfo);
 
     if (this.state.league === "EPL"){
-      const draftTeams = this.props.EPL.map(team => {
+      draftTeams = this.props.EPL.map(team => {
         return {name:team.name};
       });
+      this.props.handleDraftTeams(draftTeams);
+    } else if (this.state.league === "NBA"){
+      draftTeams = nbaDraftCleaner(this.props.NBA);
+      console.log(draftTeams);
       this.props.handleDraftTeams(draftTeams);
     }
   }
@@ -125,7 +131,8 @@ export class SetupLeague extends Component {
 }
 
 export const mapStateToProps = state => ({
-  EPL: state.EPL
+  EPL: state.EPL,
+  NBA: state.NBA
 });
 
 
