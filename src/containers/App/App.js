@@ -52,7 +52,11 @@ class App extends Component {
           />
           <Route
             exact path= "/"
-            component={Home}
+            render={() => (
+              !this.props.user.user_id ?
+                <Redirect to="/login" /> :
+                <Home/>
+            )}
           />
           <Route 
             exact path= "/setupleague"
