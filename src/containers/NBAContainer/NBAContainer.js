@@ -2,10 +2,10 @@ import React from 'react';
 import {connect} from 'react-redux';
 import NBACard from '../../components/NBACard/NBACard';
 
-export const NBAContainer = ({NBA}) => {
+export const NBAContainer = ({ NBA }) => {
   
   const eastTeams = NBA['EASTERN CONFERENCE'].map( team => {
-    <NBACard {...team} />;
+    return <NBACard {...team} />;
   });
   return (
     <div>
