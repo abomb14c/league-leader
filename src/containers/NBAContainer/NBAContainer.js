@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import NBACard from '../../components/NBACard/NBACard';
+import './nba-container.css';
 
 export const NBAContainer = ({ NBA }) => {
   
@@ -13,7 +14,11 @@ export const NBAContainer = ({ NBA }) => {
   });
 
   return (
-    <div>
+    <div className="nba-container">
+      <div className="nba-header">
+        <h3 className="header-desc">Name</h3>
+        <h3 className="header-desc record">Record</h3>
+      </div>
       {eastTeams}
       {westTeams}
     </div>
