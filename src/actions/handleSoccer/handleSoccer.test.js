@@ -1,6 +1,6 @@
 import {updateEnglishSoccer} from './handleSoccer';
 
-describe('action addNBA', () => {
+describe('action updateEnglishSoccer', () => {
   it('should have a type of ADD_ENGLISH_SOCCER', () => {
     
     const soccerData = [{}, {}, {}];
