@@ -6,13 +6,13 @@ import './create-user.css';
 
 export class CreateUser extends Component {
   constructor(props){
-    super(props)
+    super(props);
 
     this.state = {
       username: '',
       email: '',
       password: ''
-    }
+    };
   }
 
   handleChange = event => {
@@ -24,9 +24,13 @@ export class CreateUser extends Component {
 
   handleSubmit = async (event) => {
     event.preventDefault();
-    const response = await addUserFetch(this.state);
-    this.props.handleSignup({userId: response.userId, username: this.state.username})
-
+    try {
+      const response = await addUserFetch(this.state);
+      this.props.handleSignup({userId: response.userId, 
+        username: this.state.username});
+    } catch (error){
+      console.log(error);
+    }
   }
   
   render() {
@@ -59,12 +63,12 @@ export class CreateUser extends Component {
         />
         <button type="submit" className="create-user-button">Create Account</button>
       </form>
-    )
+    );
   }
 }
 
 export const mapDispatchToProps = dispatch => ({
   handleSignup: (user) => dispatch(updateUser(user))
-})
+});
 
 export default connect(null, mapDispatchToProps)(CreateUser);
