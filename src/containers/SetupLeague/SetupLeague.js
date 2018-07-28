@@ -58,6 +58,7 @@ export class SetupLeague extends Component {
       this.props.handleDraftTeams(draftTeams);
     } else if (this.state.league === "NBA"){
       draftTeams = nbaDraftCleaner(this.props.NBA);
+      console.log(draftTeams);
       this.props.handleDraftTeams(draftTeams);
     }
   }

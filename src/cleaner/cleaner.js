@@ -27,6 +27,6 @@ export const nbaCleaner = (data) => {
 
 export const nbaDraftCleaner = (NBAData) => {
   let teams = [];
-  teams.push(...NBAData['EASTERN CONFERENCE'], NBAData['WESTERN CONFERENCE']);
+  teams.push(...NBAData['EASTERN CONFERENCE'], ...NBAData['WESTERN CONFERENCE']);
   return teams; 
 };
