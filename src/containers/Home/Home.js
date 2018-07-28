@@ -7,7 +7,7 @@ import './home.css';
 export const Home = (props) => {
 
   return (
-    <div>
+    <div className="home-container">
       <EPLContainer/>
       <NBAContainer />
     </div>

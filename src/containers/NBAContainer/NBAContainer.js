@@ -7,9 +7,15 @@ export const NBAContainer = ({ NBA }) => {
   const eastTeams = NBA['EASTERN CONFERENCE'].map( team => {
     return <NBACard {...team} />;
   });
+
+  const westTeams = NBA['WESTERN CONFERENCE'].map( team => {
+    return <NBACard {...team} />;
+  });
+
   return (
     <div>
       {eastTeams}
+      {westTeams}
     </div>
   );
 };
