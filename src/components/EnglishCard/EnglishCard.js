@@ -1,5 +1,5 @@
 import React from 'react';
-import './english-card.css'
+import './english-card.css';
 
 export const EnglishCard = (props) => {
   const { name, 
@@ -22,7 +22,7 @@ export const EnglishCard = (props) => {
       </div>
       <h3 className="english-points english-desc">{points}</h3>
     </div>
-  )
-}
+  );
+};
 
 export default EnglishCard;
