@@ -22,4 +22,23 @@ describe('Navigation', () => {
   it('should match the snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
+
+  describe('mapStateToProps', () => {
+    it('should return a user object with an id', () => {
+  
+      const mockState = {
+        user: {user_id: 3},
+        text: ''
+      };
+  
+      const expected = {
+        user: {user_id: 3}
+      };
+  
+    
+      const mappedProps = mapStateToProps(mockState);
+  
+      expect(mappedProps).toEqual(expected);
+    });
+  });
 });
