@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 import CreateLeague from '../../containers/CreateLeague/CreateLeague';
-import './leagues.css'
+import './leagues.css';
 
 
 const Leagues = () => {
@@ -8,8 +8,8 @@ const Leagues = () => {
     <div className="leagues-container">
       <CreateLeague />
     </div>
-  )
-}
+  );
+};
 
 export default Leagues; 
 
