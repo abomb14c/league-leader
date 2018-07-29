@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 import LoginUser from '../../containers/LoginUser/LoginUser';
 import CreateUser from '../../containers/CreateUser/CreateUser';
-import './login.css'
+import './login.css';
 
 const Login = () => {
   return (
@@ -13,7 +13,7 @@ const Login = () => {
         <LoginUser />
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Login; 
