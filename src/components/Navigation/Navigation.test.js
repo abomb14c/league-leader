@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import  { Navigation, mapStateToProps, mapDispatchToProps}  from './Navigation';
+import { logOutUser } from '../../actions/updateUser/updateUser';
 
 describe('Navigation', () => {
   let wrapper;
@@ -39,6 +40,21 @@ describe('Navigation', () => {
       const mappedProps = mapStateToProps(mockState);
   
       expect(mappedProps).toEqual(expected);
+    });
+  });
+
+  describe('mapDispatchToProps', () => {
+    it('calls dispatch with an addHouses action when handleHouses is called', () => {
+      
+      const mockDispatch = jest.fn();
+  
+      const actionToDispatch = logOutUser();
+  
+      const mappedProps = mapDispatchToProps(mockDispatch);
+  
+      mappedProps.handleLogout();
+     
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
     });
   });
 });
