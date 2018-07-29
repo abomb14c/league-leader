@@ -28,7 +28,7 @@ describe('userReducer', () => {
     expect(result).toEqual(expected);
   });
 
-  it.skip('should return an empty object on action.type "LOGOUT_USER"', () => {
+  it('should return an empty object on action.type "LOGOUT_USER"', () => {
 
     const mockState = {};
 
