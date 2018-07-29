@@ -44,7 +44,7 @@ describe('Navigation', () => {
   });
 
   describe('mapDispatchToProps', () => {
-    it('calls dispatch with an addHouses action when handleHouses is called', () => {
+    it('calls dispatch with an logoutUser action when handleLogout is called', () => {
       
       const mockDispatch = jest.fn();
   
