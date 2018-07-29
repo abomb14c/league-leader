@@ -6,7 +6,6 @@ export const fetchEnglandScores = async () => {
   const response = await fetch(url);
   const dirtySoccerData = await response.json();
   const soccerData = dirtySoccerData.standings[0].groups[0].team_standings;
-  console.log(soccerData)
   return cleanEnglishSoccer(soccerData);
 };
 
@@ -15,7 +14,7 @@ export const fetchNbaTeams = async () => {
   const url = `http://api.sportradar.us/nba/trial/v4/en/seasons/2017/REG/standings.json?api_key=${nbaKey}`;
   const response = await fetch(url);
   const nbaData = await response.json();
-  
+  console.log(nbaData.conferences);
   return nbaCleaner(nbaData);
 };
 
