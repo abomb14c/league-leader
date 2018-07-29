@@ -6,7 +6,7 @@ export const fetchEnglandScores = async () => {
   const response = await fetch(url);
   const dirtySoccerData = await response.json();
   const soccerData = dirtySoccerData.standings[0].groups[0].team_standings;
-
+  console.log(soccerData)
   return cleanEnglishSoccer(soccerData);
 };
 
