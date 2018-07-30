@@ -100,5 +100,86 @@ describe("apiCalls", () => {
 
       expect(window.fetch).toHaveBeenCalledWith(...expected);
     });
+
+    it('Should return an object of user details', async () => {
+      
+      window.fetch = jest.fn().mockImplementation(() =>
+        Promise.resolve({
+          status: 200,
+          json: () => Promise.resolve(mockUsers[0])
+        })
+      );
+
+      const expected = {
+        "username": "Nicole",
+        "password": "nicole2",
+        "email": "nicole@nicole.com"
+      };
+      const actual = await api.fetchUser(mockUser);
+
+      expect(actual).toEqual(expected);
+    }); 
+  });
+
+  describe('fetchUser', () => {
+    let mockUsers;
+    let mockUser;
+
+    beforeEach(() => {
+      mockUser = {
+        "password": "password",
+        "username": "alan"
+      };
+
+      mockUsers = [{
+        "id": 1,
+        "username": "alan",
+        "password": "password",
+        "email": "tman2272@aol.com"
+      }, 
+      {
+        "id": 2,
+        "name": "Dude",
+        "password": "password",
+        "email": "dude6969@aol.com"
+      }];
+
+
+      window.fetch = jest.fn().mockImplementation(() =>
+        Promise.resolve({
+          status: 200,
+          json: () => Promise.resolve(mockUsers[0])
+        })
+      );
+    });
+    
+    it('Should be called with the correct params', async () => {
+      const url = 'http://localhost:3000/users';
+      const expected = [url, {
+        method: 'POST',
+        body: JSON.stringify({
+          username: mockUser.username,
+          password: mockUser.password
+        }),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }];
+      await api.fetchUser(mockUser);
+
+      expect(window.fetch).toHaveBeenCalledWith(...expected);
+    });
+   
+    it('Should return an object of user details', async () => {
+      const expected = {
+        "id": 1,
+        "username": "alan",
+        "password": "password",
+        "email": "tman2272@aol.com"
+      };
+      const actual = await api.fetchUser(mockUser);
+
+      expect(actual).toEqual(expected);
+    }); 
   });
 });
