@@ -39,3 +39,32 @@ describe('App', () => {
     expect(fetchNbaTeams).toHaveBeenCalled();
   });
 });
+
+describe('mapDispatchToProps', () => {
+  it('should call dispatch on handleEnglishSoccer with the correct params', () => {
+    const mockDispatch = jest.fn();
+    const mappedProps = mapDispatchToProps(mockDispatch);
+    const soccerData = [{}, {}, {}];
+    const mockAction = {
+      type:"ADD_ENGLISH_SOCCER",
+      EPL: soccerData
+    };
+    mappedProps.handleEnglishSoccer(soccerData);
+
+    expect(mockDispatch).toHaveBeenCalledWith(mockAction);
+  });
+
+  it('should call dispatch on handleError with the correct params', () => {
+    const mockDispatch = jest.fn();
+    const mappedProps = mapDispatchToProps(mockDispatch);
+    const nbaStats = {};
+    const mockAction = {
+      type:"ADD_NBA",
+      NBA: nbaStats
+    };
+
+    mappedProps.handleNba(nbaStats);
+
+    expect(mockDispatch).toHaveBeenCalledWith(mockAction);
+  });
+});
