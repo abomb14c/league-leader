@@ -24,13 +24,11 @@ export class CreateUser extends Component {
 
   handleSubmit = async (event) => {
     event.preventDefault();
-    try {
+  
       const response = await addUserFetch(this.state);
       this.props.handleSignup({userId: response.userId, 
         username: this.state.username});
-    } catch (error){
-      console.log(error);
-    }
+  
   }
   
   render() {

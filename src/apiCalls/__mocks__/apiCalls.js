@@ -9,3 +9,6 @@ export const fetchEnglandScores = jest.fn().mockImplementation(() =>
 export const fetchNbaTeams = jest.fn().mockImplementation(() => 
   Promise.resolve(mockCleanNBAData));
 
+export const addUserFetch = jest.fn().mockImplementation(() => Promise.resolve({
+  "id": 1
+}));
