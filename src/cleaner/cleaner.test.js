@@ -3,7 +3,7 @@ import {mockEPLData, cleanEPLData } from '../mockData/mockEPLData';
 import {mockNBAData, mockCleanNBAData, mockNbaDraftData} from '../mockData/mockNBAData';
 
 describe('cleanEnglishSoccer', () => {
-  it.skip('should return an array of objects with the correct keys,', () => {
+  it('should return an array of objects with the correct keys,', () => {
 
     const expected = cleanEPLData;
 

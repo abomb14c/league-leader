@@ -1,23 +1,63 @@
 export const mockEPLData = 
   [{
-    team: {name:'Arsenal'}, 
+    team: {name:'Manchester City'}, 
     rank: 1, 
     current_outcome: "Champions League", 
     played: 0, 
     win: 0,
     loss: 0,
     draw: 0,
-    points: 1
+    points: 0
   },
   {
-    team: {name:'Arsenal'}, 
+    team: {name:'Manchester United'}, 
     rank: 1, 
     current_outcome: "Champions League", 
     played: 0, 
     win: 0,
     loss: 0,
     draw: 0,
-    points: 1
+    points: 0
+  },
+  {
+    team: {name:'West Ham United'}, 
+    rank: 1, 
+    current_outcome: "Champions League", 
+    played: 0, 
+    win: 0, 
+    loss:0, 
+    draw: 0, 
+    points: 0
+  },
+  {
+    team: {name:'Everton FC'}, 
+    rank: 1, 
+    current_outcome: "Champions League", 
+    played: 0, 
+    win: 0, 
+    loss:0, 
+    draw: 0, 
+    points: 0
+  },
+  {
+    team: {name:'Southampton FC'}, 
+    rank: 1, 
+    current_outcome: "Champions League", 
+    played: 0, 
+    win: 0, 
+    loss:0, 
+    draw: 0, 
+    points: 0
+  },
+  {
+    team: {name:'Chelsea FC'}, 
+    rank: 1, 
+    current_outcome: "Champions League", 
+    played: 0, 
+    win: 0, 
+    loss:0, 
+    draw: 0, 
+    points: 0
   },
   {
     team: {name:'Arsenal'}, 
@@ -27,177 +67,137 @@ export const mockEPLData =
     win: 0, 
     loss:0, 
     draw: 0, 
-    points: 1 
+    points: 0
   },
   {
-    team: {name:'Arsenal'}, 
+    team: {name:'Newcastle United'}, 
     rank: 1, 
     current_outcome: "Champions League", 
     played: 0, 
     win: 0, 
     loss:0, 
     draw: 0, 
-    points: 1 
+    points: 0 
   },
   {
-    team: {name:'Arsenal'}, 
+    team: {name:'Leicester City'}, 
     rank: 1, 
     current_outcome: "Champions League", 
     played: 0, 
     win: 0, 
     loss:0, 
     draw: 0, 
-    points: 1 
+    points: 0 
   },
   {
-    team: {name:'Arsenal'}, 
+    team: {name:'Liverpool FC'}, 
     rank: 1, 
     current_outcome: "Champions League", 
     played: 0, 
     win: 0, 
     loss:0, 
     draw: 0, 
-    points: 1 
+    points: 0 
   },
   {
-    team: {name:'Arsenal'}, 
+    team: {name:'Tottenham Hotspur'}, 
     rank: 1, 
     current_outcome: "Champions League", 
     played: 0, 
     win: 0, 
     loss:0, 
     draw: 0, 
-    points: 1 
+    points: 0 
   },
   {
-    team: {name:'Arsenal'}, 
+    team: {name:'Fulham FC'}, 
     rank: 1, 
     current_outcome: "Champions League", 
     played: 0, 
     win: 0, 
     loss:0, 
     draw: 0, 
-    points: 1 
+    points: 0 
   },
   {
-    team: {name:'Arsenal'}, 
+    team: {name:'Wolverhampton Wanderers'}, 
     rank: 1, 
     current_outcome: "Champions League", 
     played: 0, 
     win: 0, 
     loss:0, 
     draw: 0, 
-    points: 1 
+    points: 0 
   },
   {
-    team: {name:'Arsenal'}, 
+    team: {name:'Crystal Palace'}, 
     rank: 1, 
     current_outcome: "Champions League", 
     played: 0, 
     win: 0, 
     loss:0, 
     draw: 0, 
-    points: 1 
+    points: 0 
   },
   {
-    team: {name:'Arsenal'}, 
+    team: {name:'Watford FC'}, 
     rank: 1, 
     current_outcome: "Champions League", 
     played: 0, 
     win: 0, 
     loss:0, 
     draw: 0, 
-    points: 1 
+    points: 0 
   },
   {
-    team: {name:'Arsenal'}, 
+    team: {name:'Burnley FC'}, 
     rank: 1, 
     current_outcome: "Champions League", 
     played: 0, 
     win: 0, 
     loss:0, 
     draw: 0, 
-    points: 1 
+    points: 0 
   },
   {
-    team: {name:'Arsenal'}, 
-    rank: 1, 
-    current_outcome: "Champions League", 
-    played: 0, 
-    win: 0, 
-    loss:0, 
-    draw: 0, 
-    points: 1 
-  },
-  {
-    team: {name:'Arsenal'}, 
-    rank: 1, 
-    current_outcome: "Champions League", 
-    played: 0, 
-    win: 0, 
-    loss:0, 
-    draw: 0, 
-    points: 1 
-  },
-  {
-    team: {name:'Arsenal'}, 
-    rank: 1, 
-    current_outcome: "Champions League", 
-    played: 0, 
-    win: 0, 
-    loss:0, 
-    draw: 0, 
-    points: 1 
-  },
-  {
-    team: {name:'Arsenal'}, 
-    rank: 1, 
-    current_outcome: "Champions League", 
-    played: 0, 
-    win: 0, 
-    loss:0, 
-    draw: 0, 
-    points: 1 
-  },
-  {
-    team: {name:'Arsenal'}, 
+    team: {name:'Brighton & Hove Albion FC'}, 
     rank: 1, 
     current_outcome: "Champions League", 
     played: 0, 
     win: 0, 
     loss:0, 
     draw: 0,
-    points: 1 
+    points: 0 
   },
   {
-    team: {name:'Arsenal'}, 
+    team: {name:'Cardiff City'}, 
     rank: 1, 
     current_outcome: "Champions League", 
     played: 0, 
     win: 0, 
     loss:0,
     draw: 0, 
-    points: 1 
+    points: 0 
   },
   {
-    team: {name:'Arsenal'}, 
+    team: {name:'AFC Bournemouth'}, 
     rank: 1, 
     current_outcome: "Champions League", 
     played: 0, 
     win: 0, 
     loss:0, 
     draw: 0, 
-    points: 1 
+    points: 0 
   },
   {
-    team: {name:'Arsenal'}, 
+    team: {name:'Huddersfield Town'}, 
     rank: 1, 
     current_outcome: "Champions League", 
     played: 0, 
     win: 0, 
     loss:0, 
     draw: 0, 
-    points: 1 
+    points: 0 
   }];
 
 export const cleanEPLData = [
