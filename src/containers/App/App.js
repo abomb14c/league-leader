@@ -12,7 +12,7 @@ import { fetchEnglandScores, fetchNbaTeams } from '../../apiCalls/apiCalls';
 import {updateEnglishSoccer} from '../../actions/handleSoccer/handleSoccer';
 import {addNBA} from '../../actions/handleNba/handleNba';
 
-class App extends Component {
+export class App extends Component {
 
   getSoccerData = async () => {
     const soccerStats = await fetchEnglandScores();
@@ -23,7 +23,6 @@ class App extends Component {
   getNbaData = async () => {
     const nbaStats = await fetchNbaTeams();
     await this.props.handleNba(nbaStats);
-    console.log(nbaStats)
   }
 
   componentDidMount = async () => {
