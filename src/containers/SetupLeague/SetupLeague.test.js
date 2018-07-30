@@ -40,4 +40,24 @@ describe('LoginUser', () => {
 
     expect(wrapper.state()).toEqual(expected);
   });
+
+  it('showMenu should toggle the state of showMenu to true', () => {
+    
+    const mockEvent = {
+      preventDefault: jest.fn()
+    };
+
+    let expected = {
+      showMenu: true,
+      leagueName: '',
+      leagueBet: '',
+      league: ''
+    };
+      
+    wrapper.instance().showMenu(mockEvent);
+  
+    expect(wrapper.state()).toEqual(expected);
+  });
+
+
 });
