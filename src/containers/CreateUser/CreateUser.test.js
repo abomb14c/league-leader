@@ -17,4 +17,14 @@ describe('DraftCard', () => {
   it('should match the snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
+
+  it("has a default state", () => {
+    let expected = {
+      username: "",
+      email: "",
+      password: ""
+    };
+
+    expect(wrapper.state()).toEqual(expected);
+  });
 });
