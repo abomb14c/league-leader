@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { App, mapDispatchToProps, mapStateToProps } from './App';
 import { shallow } from 'enzyme';
-import { fetchEnglandScores } from '../../apiCalls/apiCalls';
+import { fetchEnglandScores, fetchNbaTeams } from '../../apiCalls/apiCalls';
 
 jest.mock('./../../apiCalls/apiCalls');
 describe('App', () => {
@@ -30,5 +30,12 @@ describe('App', () => {
     await wrapper.instance().getSoccerData();
 
     expect(fetchEnglandScores).toHaveBeenCalled();
+  });
+
+  it('getNbaData should call fetchNbaTeams on pageload', async () => {
+    
+    await wrapper.instance().getNbaData();
+
+    expect(fetchNbaTeams).toHaveBeenCalled();
   });
 });
