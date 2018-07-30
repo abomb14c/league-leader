@@ -48,7 +48,19 @@ describe('UserDraftCard', () => {
   it('handleDrop should call handleTeam', () => {
 
     const teamData = [{}, {}, {}];
+
     wrapper.instance().handleDrop(teamData);
     expect(mockHandleTeam).toHaveBeenCalledWith(teamData);
+  });
+
+  it('handleDragover should have the correct drop effect', () => {
+    const mockEvent = {
+      preventDefault: jest.fn(),
+      dataTransfer: { dropEffect: "move" }
+    };
+
+    wrapper.instance().handleDragover(mockEvent);
+
+    expect(mockEvent.dataTransfer.dropEffect).toEqual('move');
   });
 });
