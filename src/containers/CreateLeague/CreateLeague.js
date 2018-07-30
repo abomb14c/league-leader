@@ -1,6 +1,5 @@
 import React from 'react';  
-import { icon } from '../../assets/plus.svg';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import './create-league.css';
  
 export const CreateLeague = () => {
@@ -13,8 +12,8 @@ export const CreateLeague = () => {
         </Link>
       </button>
     </div>
-  )
-}
+  );
+};
 
 export default CreateLeague;
 

@@ -1,0 +1,337 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EPLContainer should match the snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown
+    EPL={
+        Array [
+            Object {},
+            Object {},
+            Object {},
+          ]
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="epl-header"
+>
+          <h3
+                    className="header-desc"
+          >
+                    Name
+          </h3>
+          <h3
+                    className="header-desc rank"
+          >
+                    Rank
+          </h3>
+          <h3
+                    className="header-desc record"
+          >
+                    Record
+          </h3>
+          <h3
+                    className="header-desc points"
+          >
+                    Points
+          </h3>
+</div>,
+        Array [
+          <Unknown />,
+          <Unknown />,
+          <Unknown />,
+        ],
+      ],
+      "className": "epl-container",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <h3
+              className="header-desc"
+>
+              Name
+</h3>,
+            <h3
+              className="header-desc rank"
+>
+              Rank
+</h3>,
+            <h3
+              className="header-desc record"
+>
+              Record
+</h3>,
+            <h3
+              className="header-desc points"
+>
+              Points
+</h3>,
+          ],
+          "className": "epl-header",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Name",
+              "className": "header-desc",
+            },
+            "ref": null,
+            "rendered": "Name",
+            "type": "h3",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Rank",
+              "className": "header-desc rank",
+            },
+            "ref": null,
+            "rendered": "Rank",
+            "type": "h3",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Record",
+              "className": "header-desc record",
+            },
+            "ref": null,
+            "rendered": "Record",
+            "type": "h3",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Points",
+              "className": "header-desc points",
+            },
+            "ref": null,
+            "rendered": "Points",
+            "type": "h3",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": "0",
+        "nodeType": "function",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "1",
+        "nodeType": "function",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "2",
+        "nodeType": "function",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="epl-header"
+>
+            <h3
+                        className="header-desc"
+            >
+                        Name
+            </h3>
+            <h3
+                        className="header-desc rank"
+            >
+                        Rank
+            </h3>
+            <h3
+                        className="header-desc record"
+            >
+                        Record
+            </h3>
+            <h3
+                        className="header-desc points"
+            >
+                        Points
+            </h3>
+</div>,
+          Array [
+            <Unknown />,
+            <Unknown />,
+            <Unknown />,
+          ],
+        ],
+        "className": "epl-container",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h3
+                className="header-desc"
+>
+                Name
+</h3>,
+              <h3
+                className="header-desc rank"
+>
+                Rank
+</h3>,
+              <h3
+                className="header-desc record"
+>
+                Record
+</h3>,
+              <h3
+                className="header-desc points"
+>
+                Points
+</h3>,
+            ],
+            "className": "epl-header",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Name",
+                "className": "header-desc",
+              },
+              "ref": null,
+              "rendered": "Name",
+              "type": "h3",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Rank",
+                "className": "header-desc rank",
+              },
+              "ref": null,
+              "rendered": "Rank",
+              "type": "h3",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Record",
+                "className": "header-desc record",
+              },
+              "ref": null,
+              "rendered": "Record",
+              "type": "h3",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Points",
+                "className": "header-desc points",
+              },
+              "ref": null,
+              "rendered": "Points",
+              "type": "h3",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": "0",
+          "nodeType": "function",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "1",
+          "nodeType": "function",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "2",
+          "nodeType": "function",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

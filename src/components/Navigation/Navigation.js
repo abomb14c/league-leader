@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { logOutUser } from '../../actions/updateUser/updateUser';
 
-const Navigation = (props) => {
+export const Navigation = (props) => {
   const signOutBtn = (
     <NavLink to='/' 
       className="sign-out"

@@ -43,22 +43,27 @@ export class SetupLeague extends Component {
 
   handleSubmit = event => {
     let draftTeams;
+
     event.preventDefault();
+
     const leagueInfo = {
       league_type: this.state.league,
       name: this.state.leagueName,
       bet: this.state.leagueBet
     };
+
     this.props.createNewLeague(leagueInfo);
 
     if (this.state.league === "EPL"){
       draftTeams = this.props.EPL.map(team => {
         return {name:team.name};
       });
+
       this.props.handleDraftTeams(draftTeams);
+
     } else if (this.state.league === "NBA"){
       draftTeams = nbaDraftCleaner(this.props.NBA);
-      console.log(draftTeams);
+
       this.props.handleDraftTeams(draftTeams);
     }
   }
@@ -134,8 +139,6 @@ export const mapStateToProps = state => ({
   EPL: state.EPL,
   NBA: state.NBA
 });
-
-
 
 export const mapDispatchToProps = dispatch => ({
   createNewLeague: leagueInfo => dispatch(createLeague(leagueInfo)),

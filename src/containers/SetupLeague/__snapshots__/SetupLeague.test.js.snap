@@ -1,0 +1,375 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SetupLeague should match the snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <SetupLeague
+    EPL={
+        Array [
+            Object {},
+            Object {},
+            Object {},
+          ]
+    }
+    NBA={
+        Object {
+            "EASTERN CONFERENCE": Array [
+              Object {},
+              Object {},
+              Object {},
+            ],
+            "WESTERN CONFERENCE": Array [
+              Object {},
+              Object {},
+              Object {},
+            ],
+          }
+    }
+    createNewLeague={[Function]}
+    handleDraftTeams={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <div
+        className="setup-container"
+>
+        <h3
+                className="setup-title"
+        >
+                Setup Your League
+        </h3>
+        <input
+                className="setup-input"
+                name="leagueName"
+                onChange={[Function]}
+                placeholder="League Name"
+                value=""
+        />
+        <input
+                className="setup-input"
+                name="leagueBet"
+                onChange={[Function]}
+                placeholder="Place Your Bet"
+                value=""
+        />
+        <button
+                className="league-menu"
+                onClick={[Function]}
+        >
+                Pick A League
+        </button>
+        <button
+                className="submit-setup"
+                disabled={true}
+                onClick={[Function]}
+        >
+                Create League
+        </button>
+</div>,
+      "className": "setup-section",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h3
+            className="setup-title"
+>
+            Setup Your League
+</h3>,
+          <input
+            className="setup-input"
+            name="leagueName"
+            onChange={[Function]}
+            placeholder="League Name"
+            value=""
+/>,
+          <input
+            className="setup-input"
+            name="leagueBet"
+            onChange={[Function]}
+            placeholder="Place Your Bet"
+            value=""
+/>,
+          <button
+            className="league-menu"
+            onClick={[Function]}
+>
+            Pick A League
+</button>,
+          null,
+          <button
+            className="submit-setup"
+            disabled={true}
+            onClick={[Function]}
+>
+            Create League
+</button>,
+        ],
+        "className": "setup-container",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Setup Your League",
+            "className": "setup-title",
+          },
+          "ref": null,
+          "rendered": "Setup Your League",
+          "type": "h3",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "setup-input",
+            "name": "leagueName",
+            "onChange": [Function],
+            "placeholder": "League Name",
+            "value": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "setup-input",
+            "name": "leagueBet",
+            "onChange": [Function],
+            "placeholder": "Place Your Bet",
+            "value": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Pick A League",
+            "className": "league-menu",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "Pick A League",
+          "type": "button",
+        },
+        null,
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Create League",
+            "className": "submit-setup",
+            "disabled": true,
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "Create League",
+          "type": "button",
+        },
+      ],
+      "type": "div",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="setup-container"
+>
+          <h3
+                    className="setup-title"
+          >
+                    Setup Your League
+          </h3>
+          <input
+                    className="setup-input"
+                    name="leagueName"
+                    onChange={[Function]}
+                    placeholder="League Name"
+                    value=""
+          />
+          <input
+                    className="setup-input"
+                    name="leagueBet"
+                    onChange={[Function]}
+                    placeholder="Place Your Bet"
+                    value=""
+          />
+          <button
+                    className="league-menu"
+                    onClick={[Function]}
+          >
+                    Pick A League
+          </button>
+          <button
+                    className="submit-setup"
+                    disabled={true}
+                    onClick={[Function]}
+          >
+                    Create League
+          </button>
+</div>,
+        "className": "setup-section",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <h3
+              className="setup-title"
+>
+              Setup Your League
+</h3>,
+            <input
+              className="setup-input"
+              name="leagueName"
+              onChange={[Function]}
+              placeholder="League Name"
+              value=""
+/>,
+            <input
+              className="setup-input"
+              name="leagueBet"
+              onChange={[Function]}
+              placeholder="Place Your Bet"
+              value=""
+/>,
+            <button
+              className="league-menu"
+              onClick={[Function]}
+>
+              Pick A League
+</button>,
+            null,
+            <button
+              className="submit-setup"
+              disabled={true}
+              onClick={[Function]}
+>
+              Create League
+</button>,
+          ],
+          "className": "setup-container",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Setup Your League",
+              "className": "setup-title",
+            },
+            "ref": null,
+            "rendered": "Setup Your League",
+            "type": "h3",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "setup-input",
+              "name": "leagueName",
+              "onChange": [Function],
+              "placeholder": "League Name",
+              "value": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "setup-input",
+              "name": "leagueBet",
+              "onChange": [Function],
+              "placeholder": "Place Your Bet",
+              "value": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Pick A League",
+              "className": "league-menu",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "Pick A League",
+            "type": "button",
+          },
+          null,
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Create League",
+              "className": "submit-setup",
+              "disabled": true,
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "Create League",
+            "type": "button",
+          },
+        ],
+        "type": "div",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

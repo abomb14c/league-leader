@@ -1,0 +1,304 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navigation should match the snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown
+    handleLogout={[Function]}
+    user={
+        Object {
+            "user_id": 4,
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="logo"
+/>,
+        <div
+          className="nav-links"
+>
+          <NavLink
+                    activeClassName="active"
+                    aria-current="page"
+                    to="/"
+          >
+                    Home
+          </NavLink>
+          <NavLink
+                    activeClassName="active"
+                    aria-current="page"
+                    to="/leagues"
+          >
+                    Leagues
+          </NavLink>
+          <NavLink
+                    activeClassName="active"
+                    aria-current="page"
+                    className="sign-out"
+                    onClick={[Function]}
+                    to="/"
+          >
+                    Sign Out
+          </NavLink>
+</div>,
+      ],
+      "className": "nav",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "logo",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <NavLink
+              activeClassName="active"
+              aria-current="page"
+              to="/"
+>
+              Home
+</NavLink>,
+            <NavLink
+              activeClassName="active"
+              aria-current="page"
+              to="/leagues"
+>
+              Leagues
+</NavLink>,
+            <NavLink
+              activeClassName="active"
+              aria-current="page"
+              className="sign-out"
+              onClick={[Function]}
+              to="/"
+>
+              Sign Out
+</NavLink>,
+          ],
+          "className": "nav-links",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "activeClassName": "active",
+              "aria-current": "page",
+              "children": "Home",
+              "to": "/",
+            },
+            "ref": null,
+            "rendered": "Home",
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "activeClassName": "active",
+              "aria-current": "page",
+              "children": "Leagues",
+              "to": "/leagues",
+            },
+            "ref": null,
+            "rendered": "Leagues",
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "activeClassName": "active",
+              "aria-current": "page",
+              "children": "Sign Out",
+              "className": "sign-out",
+              "onClick": [Function],
+              "to": "/",
+            },
+            "ref": null,
+            "rendered": "Sign Out",
+            "type": [Function],
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="logo"
+/>,
+          <div
+            className="nav-links"
+>
+            <NavLink
+                        activeClassName="active"
+                        aria-current="page"
+                        to="/"
+            >
+                        Home
+            </NavLink>
+            <NavLink
+                        activeClassName="active"
+                        aria-current="page"
+                        to="/leagues"
+            >
+                        Leagues
+            </NavLink>
+            <NavLink
+                        activeClassName="active"
+                        aria-current="page"
+                        className="sign-out"
+                        onClick={[Function]}
+                        to="/"
+            >
+                        Sign Out
+            </NavLink>
+</div>,
+        ],
+        "className": "nav",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "logo",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <NavLink
+                activeClassName="active"
+                aria-current="page"
+                to="/"
+>
+                Home
+</NavLink>,
+              <NavLink
+                activeClassName="active"
+                aria-current="page"
+                to="/leagues"
+>
+                Leagues
+</NavLink>,
+              <NavLink
+                activeClassName="active"
+                aria-current="page"
+                className="sign-out"
+                onClick={[Function]}
+                to="/"
+>
+                Sign Out
+</NavLink>,
+            ],
+            "className": "nav-links",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "activeClassName": "active",
+                "aria-current": "page",
+                "children": "Home",
+                "to": "/",
+              },
+              "ref": null,
+              "rendered": "Home",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "activeClassName": "active",
+                "aria-current": "page",
+                "children": "Leagues",
+                "to": "/leagues",
+              },
+              "ref": null,
+              "rendered": "Leagues",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "activeClassName": "active",
+                "aria-current": "page",
+                "children": "Sign Out",
+                "className": "sign-out",
+                "onClick": [Function],
+                "to": "/",
+              },
+              "ref": null,
+              "rendered": "Sign Out",
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
