@@ -196,4 +196,46 @@ describe('LoginUser', () => {
       expect(mappedProps).toEqual(expected);
     });
   });
+
+  describe('mapDispatchtoProps', () => {
+    it('createNewLeague should be called with the correct params', async () => {
+
+      const mockDispatch = jest.fn();
+      const mappedProps = mapDispatchToProps(mockDispatch);
+
+      const leagueInfo = {
+        league_type: "epl",
+        name: 'League',
+        bet: 'a jersey'
+      };
+
+      const mockAction = {
+        type: "ADD_NEW_LEAGUE", 
+        leagueInfo: leagueInfo
+      };
+
+  
+      mappedProps.createNewLeague(leagueInfo);
+
+      expect(mockDispatch).toHaveBeenCalledWith(mockAction);
+    });
+
+    it('handleDraftTeams should be called with the correct params', async () => {
+
+      const mockDispatch = jest.fn();
+      const mappedProps = mapDispatchToProps(mockDispatch);
+
+      const draftTeams = [{}, {}, {}];
+
+      const mockAction = {
+        type: "ADD_TEAMS", 
+        draftTeams
+      };
+
+  
+      mappedProps.handleDraftTeams(draftTeams);
+
+      expect(mockDispatch).toHaveBeenCalledWith(mockAction);
+    });
+  });
 });
