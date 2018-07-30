@@ -64,3 +64,22 @@ describe('UserDraftCard', () => {
     expect(mockEvent.dataTransfer.dropEffect).toEqual('move');
   });
 });
+
+
+describe('mapStateToProps', () => {
+  it('should map the user and EPL to props', () => {
+    const mockState = {
+      user: {user_id:1},
+      EPL: [{}, {}, {}],
+      draftTeams: [{}, {}, {}]
+    };
+
+    const expected = {
+      user: {user_id:1},
+      EPL: [{}, {}, {}]
+    };
+    
+    const mappedProps = mapStateToProps(mockState);
+    expect(mappedProps).toEqual(expected);
+  });
+});
