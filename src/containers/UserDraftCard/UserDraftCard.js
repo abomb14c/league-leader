@@ -15,10 +15,9 @@ export class UserDraftCard extends Component {
     };
   }
 
-  handleDrop = (data) => {
-    console.log(data)
-    this.setState({teams: [...this.state.teams, data]});
-    this.props.handleTeam(data);
+  handleDrop = (teamData) => {
+    this.setState({teams: [...this.state.teams, teamData]});
+    this.props.handleTeam(teamData);
   }
 
   handleDragover = (event) => {

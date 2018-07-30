@@ -6,7 +6,7 @@ import { fetchUser } from '../../apiCalls/apiCalls';
 
 jest.mock('./../../apiCalls/apiCalls');
 
-describe('DraftCard', () => {
+describe('LoginUser', () => {
   let wrapper;
   let mockHandleLogin;
 
