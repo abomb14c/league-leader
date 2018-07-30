@@ -2,7 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { App, mapDispatchToProps, mapStateToProps } from './App';
 import { shallow } from 'enzyme';
+import { fetchEnglandScores } from '../../apiCalls/apiCalls';
 
+jest.mock('./../../apiCalls/apiCalls');
 describe('App', () => {
   let wrapper;
   let mockHandleEnglishSoccer;
@@ -21,5 +23,12 @@ describe('App', () => {
   it('should match the snapshot', () => {
 
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it('getSoccerData should call fetchEnglandScores on pageload', async () => {
+    
+    await wrapper.instance().getSoccerData();
+
+    expect(fetchEnglandScores).toHaveBeenCalled();
   });
 });
