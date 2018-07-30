@@ -25,9 +25,9 @@ export class CreateUser extends Component {
   handleSubmit = async (event) => {
     event.preventDefault();
   
-      const response = await addUserFetch(this.state);
-      this.props.handleSignup({userId: response.userId, 
-        username: this.state.username});
+    const response = await addUserFetch(this.state);
+    this.props.handleSignup({userId: response.userId, 
+      username: this.state.username});
   
   }
   

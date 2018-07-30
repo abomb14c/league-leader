@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
-import  {CreateUser}  from './CreateUser';
+import  { CreateUser, mapDispatchToProps}  from './CreateUser';
 import { addUserFetch } from '../../apiCalls/apiCalls';
 
 jest.mock('./../../apiCalls/apiCalls');
@@ -50,26 +50,54 @@ describe('DraftCard', () => {
   });
 
   describe('handleSubmit', () => {
-    it('should calls addUserFetch callback after adding user', async () => {
+    it('should calls addUserFetch with the correct params', () => {
      
-      let mockEvent = {
+      const mockEvent = {
         preventDefault: jest.fn()
       };
 
-      await  Promise.resolve(wrapper.instance().handleSubmit(mockEvent));
+      Promise.resolve(wrapper.instance().handleSubmit(mockEvent));
       
       expect(addUserFetch).toHaveBeenCalled();  
     });
-  
+
     it('should call handleSignup with the correct params', async () => {
-      const mockUser = {
-        "id": 1,
-        "name": ""
+      const mockEvent = {
+        preventDefault: jest.fn()
       };
-  
-      await wrapper.instance().handleSubmit();
-  
+
+      const mockUser = {
+        userId: 1,
+        username: ''
+      };
+
+      await wrapper.instance().handleSubmit(mockEvent);
       expect(mockHandleSignUp).toHaveBeenCalledWith(mockUser);
+    });
+  });
+
+
+  describe('mapDispatchtoProps', () => {
+    it('handleSignup should be called with the correct params', async () => {
+
+      const mockDispatch = jest.fn();
+      const mappedProps = mapDispatchToProps(mockDispatch);
+
+      const mockUser = {
+        userId: 1,
+        username: 'Alan'
+      };
+
+      const mockAction = {
+        type: "ADD_USER", 
+        userId: mockUser.userId,
+        username: mockUser.username
+      };
+
+  
+      mappedProps.handleSignup(mockUser);
+
+      expect(mockDispatch).toHaveBeenCalledWith(mockAction);
     });
   });
 });
