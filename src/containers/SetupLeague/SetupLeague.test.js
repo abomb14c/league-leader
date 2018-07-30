@@ -98,4 +98,27 @@ describe('LoginUser', () => {
     });
   });
 
+  describe('handleSubmit', () => {
+
+    it('should call createNewLeague with the correct params', () => {
+      const mockEvent = {
+        preventDefault: jest.fn()
+      };
+
+      const mockState = {
+        leagueName: 'league',
+        leagueBet: 'league',
+        league: 'league'
+      };
+
+      const mockLeagueInfo = {
+        league_type: mockState.league,
+        name:  mockState.leagueName,
+        bet: mockState.leagueBet
+      };
+
+      wrapper.instance().handleSubmit(mockEvent);
+      expect(mockCreateNewLeague).toHaveBeenCalled();
+    });
+  });
 });
