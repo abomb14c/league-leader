@@ -23,3 +23,23 @@ describe('DraftCard', () => {
     expect(wrapper).toMatchSnapshot();
   });
 });
+
+describe('mapStateToProps', () => {
+  it('should map the user to props', () => {
+    const mockState = {
+      league: {},
+      EPL: [{}, {}, {}],
+      draftTeams: [{}, {}, {}],
+      text: ''
+    };
+
+    const expected = {
+      league: {},
+      EPL: [{}, {}, {}],
+      draftTeams: [{}, {}, {}]
+    };
+    
+    const mappedProps = mapStateToProps(mockState);
+    expect(mappedProps).toEqual(expected);
+  });
+});
