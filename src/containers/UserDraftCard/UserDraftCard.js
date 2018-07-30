@@ -11,7 +11,6 @@ export class UserDraftCard extends Component {
 
     this.state = {
       teams: []
-
     };
   }
 

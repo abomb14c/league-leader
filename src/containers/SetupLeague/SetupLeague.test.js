@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { shallow, mount } from 'enzyme';
 import  { SetupLeague, mapDispatchToProps, mapStateToProps}  from './SetupLeague';
 
-describe('LoginUser', () => {
+describe('SetupLeague', () => {
   let wrapper;
   let mockCreateNewLeague;
   let mockHandleDraftTeams;
