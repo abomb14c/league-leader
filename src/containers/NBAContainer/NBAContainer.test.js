@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
 import  { NBAContainer, mapStateToProps}  from './NBAContainer';
 
-describe('DraftCard', () => {
+describe('NBAContainer', () => {
   let wrapper;
   let mockProps;
 

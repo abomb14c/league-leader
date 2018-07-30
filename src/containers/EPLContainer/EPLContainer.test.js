@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
 import  { EPLContainer, mapStateToProps}  from './EPLContainer';
 
-describe('DraftCard', () => {
+describe('EPLContainer', () => {
   let wrapper;
   let mockProps;
 
