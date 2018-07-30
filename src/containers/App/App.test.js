@@ -40,6 +40,34 @@ describe('App', () => {
   });
 });
 
+describe('mapStateToProps', () => {
+  it('should map the user to props', () => {
+    const mockState = {
+      user: {
+        user_id: 1,
+        name: 'Alan'
+      },
+      league: {
+        name: 'league'
+      },
+      text: ''
+    };
+
+    const expected = {
+      user: {
+        user_id: 1,
+        name: 'Alan'
+      },
+      league: {
+        name: 'league'
+      }
+    };
+    
+    const mappedProps = mapStateToProps(mockState);
+    expect(mappedProps).toEqual(expected);
+  });
+});
+
 describe('mapDispatchToProps', () => {
   it('should call dispatch on handleEnglishSoccer with the correct params', () => {
     const mockDispatch = jest.fn();
@@ -68,3 +96,4 @@ describe('mapDispatchToProps', () => {
     expect(mockDispatch).toHaveBeenCalledWith(mockAction);
   });
 });
+
