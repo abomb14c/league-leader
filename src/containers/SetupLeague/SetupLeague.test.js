@@ -142,4 +142,20 @@ describe('LoginUser', () => {
       expect(mockHandleDraftTeams).toHaveBeenCalled();
     });
   });
+
+  it('setEnglish should set state to "EPL', () => {
+    const mockEvent = {
+      preventDefault: jest.fn()
+    };
+
+    const expected = {
+      showMenu: false,
+      leagueName: '',
+      leagueBet: '',
+      league: "EPL"
+    };
+
+    wrapper.instance().setEnglish(mockEvent);
+    expect(wrapper.state()).toEqual(expected);
+  });
 });
