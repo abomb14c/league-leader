@@ -83,3 +83,23 @@ describe('mapStateToProps', () => {
     expect(mappedProps).toEqual(expected);
   });
 });
+
+describe('mapDispatchtoProps', () => {
+  it('handleTeam should be called with the correct params', async () => {
+
+    const mockDispatch = jest.fn();
+    const mappedProps = mapDispatchToProps(mockDispatch);
+
+    const team = {};
+
+    const mockAction = {
+      type: "REMOVE_TEAM", 
+      team
+    };
+
+
+    mappedProps.handleTeam(team);
+
+    expect(mockDispatch).toHaveBeenCalledWith(mockAction);
+  });
+});
