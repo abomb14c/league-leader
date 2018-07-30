@@ -12,3 +12,12 @@ export const fetchNbaTeams = jest.fn().mockImplementation(() =>
 export const addUserFetch = jest.fn().mockImplementation(() => Promise.resolve({
   "userId": 1
 }));
+
+export const fetchUser = jest.fn().mockImplementation(() => Promise.resolve({
+  data: {
+    id: 2,
+    name: 'alan',
+    password: 'password',
+    email: 'alanjcharles14@gmail.com'
+  }
+}));
