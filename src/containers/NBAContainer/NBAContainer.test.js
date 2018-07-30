@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
-import  { EPLContainer, mapStateToProps}  from './EPLContainer';
+import  { NBAContainer, mapStateToProps}  from './NBAContainer';
 
 describe('DraftCard', () => {
   let wrapper;
@@ -10,10 +10,12 @@ describe('DraftCard', () => {
   beforeEach(() => {
 
     mockProps = {
-      EPL: [{}, {}, {}]
+      NBA: {'EASTERN CONFERENCE':[{}, {}, {}],
+        'WESTERN CONFERENCE': [{}, {}, {}]
+      }
     };
 
-    wrapper = shallow(<EPLContainer
+    wrapper = shallow(<NBAContainer
       {...mockProps}
     />);
   });
@@ -24,15 +26,19 @@ describe('DraftCard', () => {
 });
 
 describe('mapStateToProps', () => {
-  it('should map the EPL to props', () => {
+  it('should map the NBA to props', () => {
     const mockState = {
       league: {},
-      EPL: [{}, {}, {}],
+      NBA: {'EASTERN CONFERENCE':[{}, {}, {}],
+        'WESTERN CONFERENCE': [{}, {}, {}]
+      },
       draftTeams: [{}, {}, {}]
     };
 
     const expected = {
-      EPL: [{}, {}, {}]
+      NBA: {'EASTERN CONFERENCE':[{}, {}, {}],
+        'WESTERN CONFERENCE': [{}, {}, {}]
+      }
     };
     
     const mappedProps = mapStateToProps(mockState);

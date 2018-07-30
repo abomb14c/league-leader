@@ -5,12 +5,12 @@ import './nba-container.css';
 
 export const NBAContainer = ({ NBA }) => {
   
-  const eastTeams = NBA['EASTERN CONFERENCE'].map( team => {
-    return <NBACard {...team} />;
+  const eastTeams = NBA['EASTERN CONFERENCE'].map((team, index) => {
+    return <NBACard {...team} key={index} />;
   });
 
-  const westTeams = NBA['WESTERN CONFERENCE'].map( team => {
-    return <NBACard {...team} />;
+  const westTeams = NBA['WESTERN CONFERENCE'].map((team, index) => {
+    return <NBACard {...team}  key={index}/>;
   });
 
   return (
