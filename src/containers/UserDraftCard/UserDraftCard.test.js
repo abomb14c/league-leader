@@ -44,4 +44,11 @@ describe('UserDraftCard', () => {
     wrapper.setState({teams: [{}, {}, {}]});
     expect(wrapper.state()).toEqual({teams: [{}, {}, {}]});
   });
+
+  it('handleDrop should call handleTeam', () => {
+
+    const teamData = [{}, {}, {}];
+    wrapper.instance().handleDrop(teamData);
+    expect(mockHandleTeam).toHaveBeenCalledWith(teamData);
+  });
 });
