@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import  { SetupLeague, mapDispatchToProps}  from './SetupLeague';
 
 describe('LoginUser', () => {
@@ -119,6 +119,27 @@ describe('LoginUser', () => {
 
       wrapper.instance().handleSubmit(mockEvent);
       expect(mockCreateNewLeague).toHaveBeenCalled();
+    });
+
+    it('should call handleDraftTeams if the state = epl', () => {
+
+      const mockEvent = {
+        preventDefault: jest.fn()
+      };
+
+      wrapper.setState({league:'EPL'});
+      wrapper.instance().handleSubmit(mockEvent);
+      expect(mockHandleDraftTeams).toHaveBeenCalled();
+    });
+
+    it('should call handleDraftTeams if the state = nba', () => {
+      const mockEvent = {
+        preventDefault: jest.fn()
+      };
+
+      wrapper.setState({league:'NBA'});
+      wrapper.instance().handleSubmit(mockEvent);
+      expect(mockHandleDraftTeams).toHaveBeenCalled();
     });
   });
 });
