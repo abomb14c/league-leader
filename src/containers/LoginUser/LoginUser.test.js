@@ -31,5 +31,20 @@ describe('DraftCard', () => {
     expect(wrapper.state()).toEqual(expected);
   });
 
+  describe('handleChange', () => {
+    it("should update state on change", () => {
+      let mockEvent = {
+        target: { name: "username", value: "alan" }
+      };
+      let expected = {
+        username: "alan",
+        password: ""
+      };
+  
+      wrapper.instance().handleChange(mockEvent);
+  
+      expect(wrapper.state()).toEqual(expected);
+    });
+  });
 
 });
