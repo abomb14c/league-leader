@@ -13,8 +13,8 @@ export const cleanEnglishSoccer = (soccerData) => {
   return englishTeams;
 };
 
-export const nbaCleaner = (data) => {
-  const conferences = data.conferences.reduce ((conferences, conference) => {
+export const nbaCleaner = (nbaData) => {
+  const conferences = nbaData.conferences.reduce((conferences, conference) => {
     const teams = conference.divisions.reduce((teams, division) => {
       teams = [...teams, ...division.teams];
       return teams;
@@ -27,6 +27,7 @@ export const nbaCleaner = (data) => {
 
 export const nbaDraftCleaner = (NBAData) => {
   let teams = [];
-  teams.push(...NBAData['EASTERN CONFERENCE'], ...NBAData['WESTERN CONFERENCE']);
+  teams.push(...NBAData['EASTERN CONFERENCE'], 
+    ...NBAData['WESTERN CONFERENCE']);
   return teams; 
 };
