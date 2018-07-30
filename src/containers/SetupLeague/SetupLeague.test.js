@@ -78,4 +78,24 @@ describe('LoginUser', () => {
     expect(wrapper.state()).toEqual(expected);
   });
 
+  describe('handleChange', () => {
+    it("should update state on change", () => {
+
+      let mockEvent = {
+        target: { name: "league", value: "league" }
+      };
+
+      let expected = {
+        showMenu: false,
+        leagueName: '',
+        leagueBet: '',
+        league: "league"
+      };
+  
+      wrapper.instance().handleChange(mockEvent);
+  
+      expect(wrapper.state()).toEqual(expected);
+    });
+  });
+
 });
