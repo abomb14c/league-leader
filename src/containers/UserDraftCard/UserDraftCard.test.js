@@ -35,4 +35,13 @@ describe('UserDraftCard', () => {
 
     expect(wrapper.state()).toEqual(expected);
   });
+
+  it('handleDrop should set the state of teams', () => {
+    
+    const teamData = [{}, {}, {}];
+
+    wrapper.instance().handleDrop(teamData);
+    wrapper.setState({teams: [{}, {}, {}]});
+    expect(wrapper.state()).toEqual({teams: [{}, {}, {}]});
+  });
 });
