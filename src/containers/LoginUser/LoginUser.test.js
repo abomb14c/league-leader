@@ -77,27 +77,27 @@ describe('DraftCard', () => {
   });
 
 
-//   describe('mapDispatchtoProps', () => {
-//     it('handleSignup should be called with the correct params', async () => {
+  describe('mapDispatchtoProps', () => {
+    it('handleLogin should be called with the correct params', async () => {
 
-//       const mockDispatch = jest.fn();
-//       const mappedProps = mapDispatchToProps(mockDispatch);
+      const mockDispatch = jest.fn();
+      const mappedProps = mapDispatchToProps(mockDispatch);
 
-//       const mockUser = {
-//         userId: 1,
-//         username: 'Alan'
-//       };
+      const mockUser = {
+        userId: 1,
+        username: 'Alan'
+      };
 
-//       const mockAction = {
-//         type: "ADD_USER", 
-//         userId: mockUser.userId,
-//         username: mockUser.username
-//       };
+      const mockAction = {
+        type: "ADD_USER", 
+        userId: mockUser.userId,
+        username: mockUser.username
+      };
 
   
-//       mappedProps.handleSignup(mockUser);
+      mappedProps.handleLogin(mockUser);
 
-//       expect(mockDispatch).toHaveBeenCalledWith(mockAction);
-//     });
-//   });
+      expect(mockDispatch).toHaveBeenCalledWith(mockAction);
+    });
+  });
 });
