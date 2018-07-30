@@ -26,7 +26,7 @@ describe("apiCalls", () => {
       await expect(api.fetchEnglandScores()).resolves.toEqual(cleanEPLData);
     });
   });
-  
+
   describe("fetchNBATeams", () => {
     beforeEach(() => {
       window.fetch = jest.fn().mockImplementation(() =>
@@ -49,5 +49,56 @@ describe("apiCalls", () => {
       await expect(api.fetchNbaTeams()).resolves.toEqual(mockCleanNBAData);
     });
   });
+  describe("postNewUser", () => {
+    let mockUsers;
+    let mockUser;
 
+
+    beforeEach(() => {
+      mockUser = {
+        username: "Alan",
+        email: "alan@doc.com",
+        password: "DocisGr8"
+      };
+
+      mockUsers = [{
+        username: "Nicole",
+        email: "nicole@nicole.com",
+        password: "nicole2"
+      },
+      {
+        username: "Quin",
+        email: "quin@quin.com",
+        password: "quin1"
+      }
+      ];
+
+      window.fetch = jest.fn().mockImplementation(() =>
+        Promise.resolve({
+          status: 200,
+          json: () =>
+            Promise.resolve({
+              users: mockUsers
+            })
+        })
+      );
+    });
+
+    it("calls fetch with the correct data when adding a new user", async () => {
+      const expected = [
+        "http://localhost:3000/users/new",
+        {
+          body: JSON.stringify(mockUser),
+          headers: {
+            "Content-Type": "application/json"
+          },
+          method: "POST"
+        }
+      ];
+
+      await api.addUserFetch(mockUser);
+
+      expect(window.fetch).toHaveBeenCalledWith(...expected);
+    });
+  });
 });
