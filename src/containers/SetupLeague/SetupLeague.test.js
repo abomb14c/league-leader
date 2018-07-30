@@ -143,7 +143,7 @@ describe('LoginUser', () => {
     });
   });
 
-  it('setEnglish should set state to "EPL', () => {
+  it('setEnglish should set state to "EPL"', () => {
     const mockEvent = {
       preventDefault: jest.fn()
     };
@@ -156,6 +156,22 @@ describe('LoginUser', () => {
     };
 
     wrapper.instance().setEnglish(mockEvent);
+    expect(wrapper.state()).toEqual(expected);
+  });
+
+  it('setNBA should set state to "NBA"', () => {
+    const mockEvent = {
+      preventDefault: jest.fn()
+    };
+
+    const expected = {
+      showMenu: false,
+      leagueName: '',
+      leagueBet: '',
+      league: "NBA"
+    };
+
+    wrapper.instance().setNBA(mockEvent);
     expect(wrapper.state()).toEqual(expected);
   });
 });
