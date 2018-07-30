@@ -10,7 +10,7 @@ describe('DraftCard', () => {
   beforeEach(() => {
 
     mockProps = {
-      EPL: [ {}, {}, {}]
+      EPL: [{}, {}, {}]
     };
 
     wrapper = shallow(<EPLContainer
@@ -23,22 +23,20 @@ describe('DraftCard', () => {
   });
 });
 
-// describe('mapStateToProps', () => {
-//   it('should map the user to props', () => {
-//     const mockState = {
-//       league: {},
-//       EPL: [{}, {}, {}],
-//       draftTeams: [{}, {}, {}],
-//       text: ''
-//     };
+describe('mapStateToProps', () => {
+  it('should map the user to props', () => {
+    const mockState = {
+      league: {},
+      EPL: [{}, {}, {}],
+      draftTeams: [{}, {}, {}],
+     
+    };
 
-//     const expected = {
-//       league: {},
-//       EPL: [{}, {}, {}],
-//       draftTeams: [{}, {}, {}]
-//     };
+    const expected = {
+      EPL: [{}, {}, {}]
+    };
     
-//     const mappedProps = mapStateToProps(mockState);
-//     expect(mappedProps).toEqual(expected);
-//   });
-// });
+    const mappedProps = mapStateToProps(mockState);
+    expect(mappedProps).toEqual(expected);
+  });
+});
