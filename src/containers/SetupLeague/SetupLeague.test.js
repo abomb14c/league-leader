@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow, mount } from 'enzyme';
-import  { SetupLeague, mapDispatchToProps}  from './SetupLeague';
+import  { SetupLeague, mapDispatchToProps, mapStateToProps}  from './SetupLeague';
 
 describe('LoginUser', () => {
   let wrapper;
@@ -173,5 +173,27 @@ describe('LoginUser', () => {
 
     wrapper.instance().setNBA(mockEvent);
     expect(wrapper.state()).toEqual(expected);
+  });
+
+  describe('mapStateToProps', () => {
+    it('should map the NBA and EPL to props', () => {
+      const mockState = {
+        EPL: [{}, {}, {}],
+        NBA: {'EASTERN CONFERENCE':[{}, {}, {}],
+          'WESTERN CONFERENCE': [{}, {}, {}]
+        },
+        draftTeams: [{}, {}, {}]
+      };
+  
+      const expected = {
+        NBA: {'EASTERN CONFERENCE':[{}, {}, {}],
+          'WESTERN CONFERENCE': [{}, {}, {}]
+        },
+        EPL: [{}, {}, {}]
+      };
+      
+      const mappedProps = mapStateToProps(mockState);
+      expect(mappedProps).toEqual(expected);
+    });
   });
 });
