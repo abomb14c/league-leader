@@ -59,5 +59,23 @@ describe('LoginUser', () => {
     expect(wrapper.state()).toEqual(expected);
   });
 
+  it.skip('closeMenu should toggle the state of showMenu to false', () => {
+    const mockEvent = {
+      preventDefault: jest.fn()
+    };
+    
+    const secondEvent = {element: wrapper.dropDownMenu};
+
+    let expected = {
+      showMenu: false,
+      leagueName: '',
+      leagueBet: '',
+      league: ''
+    };
+
+    wrapper.instance().showMenu(mockEvent);
+    wrapper.instance().closeMenu(secondEvent);
+    expect(wrapper.state()).toEqual(expected);
+  });
 
 });
