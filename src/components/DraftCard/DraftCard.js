@@ -1,5 +1,6 @@
 import React from 'react';
 import './draft-card.css';
+import PropTypes from 'prop-types';
 
 export const DraftCard = ({name}) => {
 
@@ -11,3 +12,7 @@ export const DraftCard = ({name}) => {
 };
 
 export default DraftCard;
+
+DraftCard.propTypes = {
+  name: PropTypes.string
+};
