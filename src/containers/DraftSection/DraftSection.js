@@ -5,22 +5,28 @@ import UserDraftCard from '../UserDraftCard/UserDraftCard';
 import DraftTeamsContainer from '../DraftTeamsContainer/DraftTeamsContainer';
 import { addLeagueFetch } from '../../apiCalls/apiCalls';
 import PropTypes from 'prop-types';
+import { addLeagueID } from '../../actions/updateLeagueID/updateLeagueID';
 
 export class DraftSection extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      leagueID: null
+    };
   }
   
   handleSubmit = async (event) => {
     const leagueInfo = {
       admin: this.props.user.user_id,
-      league_type: this.props.league.league,
-      name: this.props.league.leagueName,
-      bet: this.props.league.leagueBet,
+      league_type: this.props.league.league_type,
+      name: this.props.league.name,
+      bet: this.props.league.bet,
       teams: this.props.draftPicks
     };
     event.preventDefault();
-    await addLeagueFetch(leagueInfo);
+    const leagueID = await addLeagueFetch(leagueInfo);
+    this.props.handleLeagueID(leagueID);
   }
 
   render() {
@@ -57,10 +63,15 @@ export const mapStateToProps = state => ({
   user: state.user
 });
 
-export default connect(mapStateToProps, null)(DraftSection);
+export const mapDispatchToProps = dispatch => ({
+  handleLeagueID: leagueID => dispatch(addLeagueID(leagueID))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(DraftSection);
 
 DraftSection.propTypes = {
   league: PropTypes.object,
   draftPicks: PropTypes.arrayOf(PropTypes.object),
-  user: PropTypes.object
+  user: PropTypes.object,
+  handleLeagueID: PropTypes.func
 };

@@ -72,6 +72,6 @@ export const addLeagueFetch = async (leagueInfo) => {
   
   const response = await fetch(url, options);
   const leagueData = await response.json();
-  console.log(leagueData)
+  return leagueData;
 
 };

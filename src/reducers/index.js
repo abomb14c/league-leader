@@ -5,6 +5,7 @@ import leagueReducer from './leagueReducer/leagueReducer';
 import draftTeamReducer from './draftTeamReducer/draftTeamReducer';
 import nbaReducer from './nbaReducer/nbaReducer';
 import draftPickReducer from './draftPickReducer/draftPickReducer';
+import leagueIDReducer from './leagueIDReducer/leagueIDReducer';
 
 const rootReducer = combineReducers({
   user: userReducer,
@@ -12,7 +13,8 @@ const rootReducer = combineReducers({
   NBA: nbaReducer,
   league: leagueReducer,
   draftTeams: draftTeamReducer,
-  draftPicks: draftPickReducer
+  draftPicks: draftPickReducer,
+  leagueID: leagueIDReducer
 });
 
 export default rootReducer;
