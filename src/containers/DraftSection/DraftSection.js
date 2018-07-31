@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import DraftCard from '../../components/DraftCard/DraftCard';
 import './draft-section.css';
 import UserDraftCard from '../UserDraftCard/UserDraftCard';
-import { Draggable, Droppable } from 'react-drag-and-drop';
+import { Draggable } from 'react-drag-and-drop';
 
 export const DraftSection = (props) => {
   const {
