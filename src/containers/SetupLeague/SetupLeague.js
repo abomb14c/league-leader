@@ -4,6 +4,7 @@ import { createLeague } from '../../actions/updateLeague/updateLeague';
 import { addDraftCards } from '../../actions/handleDraftCards/handleDraftCards';
 import { nbaDraftCleaner } from '../../cleaner/cleaner';
 import './setup-league.css';
+import PropTypes from 'prop-types';
 
 export class SetupLeague extends Component {
   constructor(props){
@@ -145,4 +146,11 @@ export const mapDispatchToProps = dispatch => ({
   handleDraftTeams: draftTeams => dispatch(addDraftCards(draftTeams))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SetupLeague); 
+export default connect(mapStateToProps, mapDispatchToProps)(SetupLeague);
+
+SetupLeague.propTypes = {
+  NBA: PropTypes.object,
+  EPL: PropTypes.arrayOf(PropTypes.object),
+  createLeague: PropTypes.func,
+  handleDraftTeams: PropTypes.func
+};

@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import NBACard from '../../components/NBACard/NBACard';
 import './nba-container.css';
+import PropTypes from 'prop-types';
 
 export const NBAContainer = ({ NBA }) => {
   
@@ -42,3 +43,7 @@ export const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps, null)(NBAContainer);
+
+NBAContainer.propTypes = {
+  NBA: PropTypes.object
+};

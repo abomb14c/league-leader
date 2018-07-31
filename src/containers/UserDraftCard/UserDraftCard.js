@@ -49,7 +49,7 @@ export const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = dispatch => ({
-handleTeam: team => dispatch(removeTeam(team))
+  handleTeam: team => dispatch(removeTeam(team))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserDraftCard);

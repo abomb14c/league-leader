@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { addUserFetch } from '../../apiCalls/apiCalls';
 import { updateUser } from '../../actions/updateUser/updateUser';
 import './create-user.css';
+import PropTypes from 'prop-types';
 
 export class CreateUser extends Component {
   constructor(props){
@@ -70,3 +71,7 @@ export const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(null, mapDispatchToProps)(CreateUser);
+
+CreateUser.propTypes = {
+  handleSignup: PropTypes.func
+};

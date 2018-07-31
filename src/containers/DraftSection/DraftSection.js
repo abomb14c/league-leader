@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import DraftCard from '../../components/DraftCard/DraftCard';
 import './draft-section.css';
 import UserDraftCard from '../UserDraftCard/UserDraftCard';
-import { Draggable, Droppable } from 'react-drag-and-drop';
+import { Draggable } from 'react-drag-and-drop';
+import PropTypes from 'prop-types';
 
 export const DraftSection = (props) => {
   const {
@@ -45,8 +46,12 @@ export const DraftSection = (props) => {
 
 export const mapStateToProps = state => ({
   league: state.league,
-  EPL: state.EPL,
   draftTeams: state.draftTeams
 });
 
 export default connect(mapStateToProps, null)(DraftSection);
+
+DraftSection.propTypes = {
+  league: PropTypes.object,
+  draftTeams: PropTypes.arrayOf(PropTypes.object)
+};

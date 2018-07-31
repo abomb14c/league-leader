@@ -11,6 +11,7 @@ import DraftSection from '../DraftSection/DraftSection';
 import { fetchEnglandScores, fetchNbaTeams } from '../../apiCalls/apiCalls';
 import {updateEnglishSoccer} from '../../actions/handleSoccer/handleSoccer';
 import {addNBA} from '../../actions/handleNba/handleNba';
+import PropTypes from 'prop-types';
 
 export class App extends Component {
 
@@ -87,3 +88,10 @@ export const mapDispatchToProps = dispatch => ({
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
+
+App.propTypes = {
+  user: PropTypes.object,
+  league: PropTypes.object,
+  handleEnglishSoccer: PropTypes.func,
+  handleNba: PropTypes.func
+};
