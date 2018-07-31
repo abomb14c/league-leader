@@ -16,9 +16,9 @@ export class UserDraftCard extends Component {
   }
 
   handleDrop = (teamData) => {
-    console.log(this.props.user)
     this.setState({teams: [...this.state.teams, teamData]});
     this.props.handleTeam(teamData);
+    this.props.addDraftPick(teamData)
   }
 
   handleDragover = (event) => {
@@ -50,7 +50,8 @@ export const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = dispatch => ({
-  handleTeam: team => dispatch(removeTeam(team))
+  handleTeam: team => dispatch(removeTeam(team)),
+  addDraftPick: team => dispatch(addTeam(team))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserDraftCard);

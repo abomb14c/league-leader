@@ -4,3 +4,10 @@ export const createLeague = leagueInfo => {
     leagueInfo
   };
 };
+
+export const addTeam = team => {
+  return {
+    type: "ADD_TEAM",
+    team
+  };
+};
