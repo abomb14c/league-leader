@@ -4,6 +4,7 @@ import './user-draft-card.css';
 import { Droppable } from 'react-drag-and-drop';
 import DraftPicks from '../../components/DraftPicks/DraftPicks';
 import { removeTeam } from '../../actions/handleDraftCards/handleDraftCards';
+import { addTeam } from '../../actions/handleDraftPicks/handleDraftPicks';
 import PropTypes from 'prop-types';
 
 export class UserDraftCard extends Component {
@@ -18,7 +19,7 @@ export class UserDraftCard extends Component {
   handleDrop = (teamData) => {
     this.setState({teams: [...this.state.teams, teamData]});
     this.props.handleTeam(teamData);
-    this.props.addDraftPick(teamData)
+    this.props.addDraftPick(teamData);
   }
 
   handleDragover = (event) => {
@@ -58,5 +59,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(UserDraftCard);
 
 UserDraftCard.propTypes = {
   user: PropTypes.object,
-  handleTeam: PropTypes.func
+  handleTeam: PropTypes.func,
+  addDraftPick:PropTypes.func
 };

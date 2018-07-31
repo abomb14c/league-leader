@@ -6,6 +6,7 @@ const leagueReducer = (state = intitialState, action) => {
       return action.leagueInfo;
     case "LOGOUT_USER":
       return {};
+    case "ADD_TEAM":
     default:
       return state;
   }
