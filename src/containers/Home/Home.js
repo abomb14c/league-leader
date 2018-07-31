@@ -4,7 +4,7 @@ import NBAContainer from '../NBAContainer/NBAContainer';
 import { Link } from 'react-router-dom';
 import './home.css';
 
-export const Home = (props) => {
+export const Home = () => {
 
   return (
     <div className="home-container">

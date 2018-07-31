@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { updateUser } from '../../actions/updateUser/updateUser';
 import { fetchUser } from '../../apiCalls/apiCalls';
 import './login-user.css';
+import PropTypes from 'prop-types';
 
 export class LoginUser extends Component {
   constructor(props){
@@ -58,3 +59,7 @@ export const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(null, mapDispatchToProps)(LoginUser);
+
+LoginUser.propTypes = {
+  handleLogin: PropTypes.func
+};
