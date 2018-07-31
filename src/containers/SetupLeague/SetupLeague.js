@@ -15,7 +15,6 @@ export class SetupLeague extends Component {
       leagueName: '',
       leagueBet: '',
       league: ''
-
     };
   }
 

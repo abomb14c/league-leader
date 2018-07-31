@@ -30,6 +30,7 @@ export const DraftSection = (props) => {
           <h3 className="league-bet">{league.bet}</h3>
         </div>
       </div>
+      <button className="submit-league-button">Submit League</button>
       <div className="draft-section">
         <div className="draft-teams">
           <div className="draft-teams-title">
