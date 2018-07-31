@@ -28,14 +28,12 @@ describe('mapStateToProps', () => {
   it('should map the user to props', () => {
     const mockState = {
       league: {},
-      EPL: [{}, {}, {}],
       draftTeams: [{}, {}, {}],
       text: ''
     };
 
     const expected = {
       league: {},
-      EPL: [{}, {}, {}],
       draftTeams: [{}, {}, {}]
     };
     

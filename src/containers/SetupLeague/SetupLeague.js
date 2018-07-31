@@ -151,6 +151,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(SetupLeague);
 SetupLeague.propTypes = {
   NBA: PropTypes.object,
   EPL: PropTypes.arrayOf(PropTypes.object),
-  createLeague: PropTypes.func,
+  createNewLeague: PropTypes.func,
   handleDraftTeams: PropTypes.func
 };

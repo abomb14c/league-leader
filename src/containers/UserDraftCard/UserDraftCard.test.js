@@ -75,8 +75,7 @@ describe('mapStateToProps', () => {
     };
 
     const expected = {
-      user: {user_id:1},
-      EPL: [{}, {}, {}]
+      user: {user_id:1}
     };
     
     const mappedProps = mapStateToProps(mockState);
