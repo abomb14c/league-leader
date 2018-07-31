@@ -50,8 +50,7 @@ export class SetupLeague extends Component {
       admin: this.props.user.user_id,
       league_type: this.state.league,
       name: this.state.leagueName,
-      bet: this.state.leagueBet,
-      teams: []
+      bet: this.state.leagueBet
     };
 
     this.props.createNewLeague(leagueInfo);

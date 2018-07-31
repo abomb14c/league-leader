@@ -1,16 +1,27 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
 import './draft-section.css';
 import UserDraftCard from '../UserDraftCard/UserDraftCard';
 import DraftTeamsContainer from '../DraftTeamsContainer/DraftTeamsContainer';
+import { addLeagueFetch } from '../../apiCalls/apiCalls';
 import PropTypes from 'prop-types';
 
 export class DraftSection extends Component {
   constructor(props) {
     super(props);
   }
- 
+  
+  handleSubmit = async (event) => {
+    const leagueInfo = {
+      admin: this.props.user.user_id,
+      league_type: this.props.league.league,
+      name: this.props.league.leagueName,
+      bet: this.props.league.leagueBet,
+      teams: this.props.draftPicks
+    };
+    event.preventDefault();
+    await addLeagueFetch(leagueInfo);
+  }
 
   render() {
     return (
@@ -22,7 +33,10 @@ export class DraftSection extends Component {
             <h3 className="league-bet">{this.props.league.bet}</h3>
           </div>
         </div>
-        <button className="submit-league-button">Submit League</button>
+        <button  onClick={this.handleSubmit} 
+          className="submit-league-button">
+          Submit League
+        </button>
         <div className="draft-section">
           <div className="draft-teams">
             <div className="draft-teams-title">
@@ -39,12 +53,14 @@ export class DraftSection extends Component {
 
 export const mapStateToProps = state => ({
   league: state.league,
-  draftTeams: state.draftTeams
+  draftPicks: state.draftPicks,
+  user: state.user
 });
 
 export default connect(mapStateToProps, null)(DraftSection);
 
 DraftSection.propTypes = {
   league: PropTypes.object,
-  draftTeams: PropTypes.arrayOf(PropTypes.object)
+  draftPicks: PropTypes.arrayOf(PropTypes.object),
+  user: PropTypes.object
 };

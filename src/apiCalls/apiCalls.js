@@ -49,3 +49,29 @@ export const fetchUser = async (user) => {
   const userData = await response.json();
   return userData;
 };
+
+export const addLeagueFetch = async (leagueInfo) => {
+  const keys = {
+    leagueName: leagueInfo.name,
+    leagueType: leagueInfo.league_type,
+    bet: leagueInfo.bet,
+    admin: leagueInfo.admin,
+    teams: leagueInfo.teams
+
+  };
+
+  const options = {
+    method: "POST",
+    body: JSON.stringify(leagueInfo),
+    headers: {
+      "Content-Type": "application/json"
+    }
+  };
+
+  const url = `http://localhost:3000/league?name=${keys.leagueName}&league_type=${keys.leagueType}&bet=${keys.bet}'&admin=${keys.admin}&teams=${keys.teams}`;
+  
+  const response = await fetch(url, options);
+  const leagueData = await response.json();
+  console.log(leagueData)
+
+};
