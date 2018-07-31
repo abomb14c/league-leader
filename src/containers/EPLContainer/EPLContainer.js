@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux'; 
 import EnglishCard from '../../components/EnglishCard/EnglishCard';
 import './epl-container.css';
+import PropTypes from 'prop-types';
 
 export const EPLContainer = (props) => {
   const eplCards = props.EPL.map((team, index) => {
@@ -29,3 +30,7 @@ export const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps, null)(EPLContainer);
+
+EPLContainer.propTypes = {
+  EPL: PropTypes.arrayOf(PropTypes.object)
+};
