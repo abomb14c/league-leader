@@ -3,6 +3,7 @@ import './navigation.css';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { logOutUser } from '../../actions/updateUser/updateUser';
+import PropTypes from 'prop-types';
 
 export const Navigation = (props) => {
   const signOutBtn = (
@@ -43,3 +44,8 @@ export const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Navigation); 
+
+Navigation.propTypes = {
+  user: PropTypes.object,
+  handleLogout: PropTypes.func
+};

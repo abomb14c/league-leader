@@ -1,5 +1,6 @@
 import React from 'react';
 import './nba-card.css';
+import PropTypes from 'prop-types';
 
 const NBACard = (props) => {
   const {name,
@@ -21,3 +22,10 @@ const NBACard = (props) => {
 };
 
 export default NBACard;
+
+NBACard.propTypes = {
+  name: PropTypes.string,
+  market: PropTypes.string,
+  losses: PropTypes.number,
+  wins: PropTypes.number
+};

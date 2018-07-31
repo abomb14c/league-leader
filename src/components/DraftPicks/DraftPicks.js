@@ -1,4 +1,5 @@
 import React from 'react'; 
+import PropTypes from 'prop-types';
 
 const DraftPicks = ({teams}) => {
   const displayPicks = teams.map((team, index) => {
@@ -17,3 +18,7 @@ const DraftPicks = ({teams}) => {
 };
 
 export default DraftPicks;
+
+DraftPicks.propTypes = {
+  team: PropTypes.arrayOf(PropTypes.object)
+};

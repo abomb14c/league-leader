@@ -1,5 +1,6 @@
 import React from 'react';
 import './english-card.css';
+import PropTypes from 'prop-types';
 
 export const EnglishCard = (props) => {
   const { name, 
@@ -26,3 +27,12 @@ export const EnglishCard = (props) => {
 };
 
 export default EnglishCard;
+
+EnglishCard.propTypes = {
+  name: PropTypes.string,
+  wins: PropTypes.number,
+  losses: PropTypes.number,
+  draws: PropTypes.number,
+  points: PropTypes.number,
+  rank: PropTypes.number
+};
