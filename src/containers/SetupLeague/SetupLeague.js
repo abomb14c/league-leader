@@ -48,6 +48,7 @@ export class SetupLeague extends Component {
     event.preventDefault();
 
     const leagueInfo = {
+      admin: this.props.user.user_id,
       league_type: this.state.league,
       name: this.state.leagueName,
       bet: this.state.leagueBet
@@ -105,7 +106,7 @@ export class SetupLeague extends Component {
           />
           <button onClick={this.showMenu}
             className="league-menu">
-            Pick A League
+            Pick A Sport
           </button>
           {
             this.state.showMenu
@@ -138,7 +139,8 @@ export class SetupLeague extends Component {
 
 export const mapStateToProps = state => ({
   EPL: state.EPL,
-  NBA: state.NBA
+  NBA: state.NBA,
+  user: state.user
 });
 
 export const mapDispatchToProps = dispatch => ({
@@ -151,6 +153,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(SetupLeague);
 SetupLeague.propTypes = {
   NBA: PropTypes.object,
   EPL: PropTypes.arrayOf(PropTypes.object),
+  user: PropTypes.object,
   createNewLeague: PropTypes.func,
   handleDraftTeams: PropTypes.func
 };
