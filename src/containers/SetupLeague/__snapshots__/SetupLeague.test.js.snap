@@ -28,6 +28,11 @@ ShallowWrapper {
     }
     createNewLeague={[Function]}
     handleDraftTeams={[Function]}
+    user={
+        Object {
+            "user_id": 2,
+          }
+    }
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],

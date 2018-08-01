@@ -15,7 +15,8 @@ describe('SetupLeague', () => {
     mockProps = {
       EPL: [{}, {}, {}],
       NBA: {'EASTERN CONFERENCE':[{}, {}, {}], 
-        'WESTERN CONFERENCE': [{}, {}, {}]}
+        'WESTERN CONFERENCE': [{}, {}, {}]},
+      user: {user_id: 2}
     };
 
     wrapper = shallow(<SetupLeague 
@@ -99,7 +100,8 @@ describe('SetupLeague', () => {
   });
 
   describe('handleSubmit', () => {
-
+  
+    
     it('should call createNewLeague with the correct params', () => {
       const mockEvent = {
         preventDefault: jest.fn()
@@ -111,7 +113,12 @@ describe('SetupLeague', () => {
         league: 'league'
       };
 
+      const user = {
+        user_id: 1
+      };
+
       const mockLeagueInfo = {
+        admin: user.user_id,
         league_type: mockState.league,
         name:  mockState.leagueName,
         bet: mockState.leagueBet
