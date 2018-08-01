@@ -4,7 +4,7 @@ import { cleanEPLData, mockDirtySoccer } from '../mockData/mockEPLData';
 import { mockNBAData, mockCleanNBAData } from '../mockData/mockNBAData';
 
 describe("apiCalls", () => {
-  describe.skip("fetchEnglandScores", () => {
+  describe("fetchEnglandScores", () => {
     beforeEach(() => {
       window.fetch = jest.fn().mockImplementation(() =>
         Promise.resolve({
@@ -27,7 +27,7 @@ describe("apiCalls", () => {
     });
   });
 
-  describe.skip("fetchNBATeams", () => {
+  describe("fetchNBATeams", () => {
     beforeEach(() => {
       window.fetch = jest.fn().mockImplementation(() =>
         Promise.resolve({
@@ -186,7 +186,6 @@ describe("apiCalls", () => {
 });
   
 describe("addLEagueFetch", () => {
-  let mockUsers;
   let mockKeys;
   let leagueInfo;
 
@@ -256,4 +255,43 @@ describe("addLEagueFetch", () => {
 
     expect(actual).toEqual(expected);
   }); 
+
+  describe('fetchLeagues', () => {
+    let mockUser;
+
+    beforeEach(() => {
+      mockUser = {
+        "password": "password",
+        "username": "alan",
+        "user_id": 1
+      };
+
+      window.fetch = jest.fn().mockImplementation(() =>
+        Promise.resolve({
+          status: 200,
+          json: () => Promise.resolve(mockUser)
+        })
+      );
+    });
+    
+    it('Should be called with the correct params', async () => {
+      const url = `http://localhost:3000/league/${mockUser.user_id}`;
+
+      await api.fetchLeagues(mockUser);
+
+      expect(window.fetch).toHaveBeenCalledWith(url);
+    });
+   
+    it('Should return an object of user details', async () => {
+      const expected = {
+        "user_id": 1,
+        "username": "alan",
+        "password": "password"
+      };
+      const actual = await api.fetchLeagues(mockUser);
+
+      expect(actual).toEqual(expected);
+    }); 
+  });
 });
+
