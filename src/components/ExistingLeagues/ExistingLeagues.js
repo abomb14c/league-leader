@@ -1,6 +1,7 @@
 import React from 'react';
 import LeagueCard from '../LeagueCard/LeagueCard';
 import './existing-leagues.css';
+import PropTypes from 'prop-types';
 
 const ExistingLeagues = ({leagues}) => {
   const displayLeagues = leagues.map((league, index) => {
@@ -14,3 +15,7 @@ const ExistingLeagues = ({leagues}) => {
 };
 
 export default ExistingLeagues;
+
+ExistingLeagues.propTypes = {
+  leagues: PropTypes.arrayOf(PropTypes.object)
+};
