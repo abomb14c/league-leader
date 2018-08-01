@@ -8,7 +8,6 @@ describe('LeagueCard', () => {
 
   beforeEach(() => {
     mockProps = {
-      admin: 2,
       bet: 'jersey',
       league_type: 'EPL',
       name: 'League'

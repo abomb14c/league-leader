@@ -1,7 +1,8 @@
 import React from 'react'; 
 import './league-card.css';
+import PropTypes from 'prop-types';
 
-const LeagueCard = ({admin, bet, league_type, name }) => {
+const LeagueCard = ({ bet, league_type, name }) => {
   return (
     <div className="league-card-container">
       <div className="league-card-header">
@@ -16,3 +17,9 @@ const LeagueCard = ({admin, bet, league_type, name }) => {
 };
 
 export default LeagueCard;
+
+LeagueCard.propTypes = {
+  bet: PropTypes.string,
+  league_type: PropTypes.string,
+  name: PropTypes.string
+};
