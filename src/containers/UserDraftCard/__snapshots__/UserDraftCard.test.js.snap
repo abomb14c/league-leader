@@ -12,6 +12,7 @@ ShallowWrapper {
             Object {},
           ]
     }
+    addDraftPick={[Function]}
     handleTeam={[Function]}
     user={
         Object {

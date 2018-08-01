@@ -6,15 +6,16 @@ import  { DraftSection, mapStateToProps}  from './DraftSection';
 describe('DraftCard', () => {
   let wrapper;
   let mockProps;
-
+  let mockHandleLeagueID;
   beforeEach(() => {
-
+    mockHandleLeagueID = jest.fn();
     mockProps = {
       league: {},
       draftTeams: []
     };
 
     wrapper = shallow(<DraftSection
+      handleLeagueID={mockHandleLeagueID}
       {...mockProps}
     />);
   });
@@ -28,13 +29,15 @@ describe('mapStateToProps', () => {
   it('should map the user to props', () => {
     const mockState = {
       league: {},
-      draftTeams: [{}, {}, {}],
-      text: ''
+      draftPicks: [{}, {}, {}],
+      text: '',
+      user: {}
     };
 
     const expected = {
       league: {},
-      draftTeams: [{}, {}, {}]
+      draftPicks: [{}, {}, {}],
+      user: {}
     };
     
     const mappedProps = mapStateToProps(mockState);

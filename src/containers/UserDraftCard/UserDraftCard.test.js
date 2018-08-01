@@ -10,9 +10,11 @@ describe('UserDraftCard', () => {
   let wrapper;
   let mockHandleTeam;
   let mockProps;
+  let mockAddDraftPick; 
   
   beforeEach(() => {
     mockHandleTeam = jest.fn();
+    mockAddDraftPick = jest.fn()
     mockProps = {
       EPL: [{}, {}, {}],
       user: {user_id: 2}
@@ -20,6 +22,7 @@ describe('UserDraftCard', () => {
   
     wrapper = shallow(<UserDraftCard 
       handleTeam={mockHandleTeam}
+      addDraftPick={mockAddDraftPick}
       {...mockProps}
     />);
   });
