@@ -25,14 +25,13 @@ Say what the step will be
 Clone the repositorys (git clone https://github.com/abomb14c/league-leader) & (git clone https://github.com/abomb14c/league-leader-backend).
 ```
 ```
-#get backend server running first
+# get backend server running first
 ```
 npm install 
-```
 node server.js
 ```
 
-#get frontend server running
+# get frontend server running
 npm install
 ```
 ```
