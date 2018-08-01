@@ -28,6 +28,11 @@ ShallowWrapper {
     }
     createNewLeague={[Function]}
     handleDraftTeams={[Function]}
+    user={
+        Object {
+            "user_id": 2,
+          }
+    }
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -67,7 +72,7 @@ ShallowWrapper {
                 className="league-menu"
                 onClick={[Function]}
         >
-                Pick A League
+                Pick A Sport
         </button>
         <button
                 className="submit-setup"
@@ -109,7 +114,7 @@ ShallowWrapper {
             className="league-menu"
             onClick={[Function]}
 >
-            Pick A League
+            Pick A Sport
 </button>,
           null,
           <button
@@ -171,12 +176,12 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Pick A League",
+            "children": "Pick A Sport",
             "className": "league-menu",
             "onClick": [Function],
           },
           "ref": null,
-          "rendered": "Pick A League",
+          "rendered": "Pick A Sport",
           "type": "button",
         },
         null,
@@ -231,7 +236,7 @@ ShallowWrapper {
                     className="league-menu"
                     onClick={[Function]}
           >
-                    Pick A League
+                    Pick A Sport
           </button>
           <button
                     className="submit-setup"
@@ -273,7 +278,7 @@ ShallowWrapper {
               className="league-menu"
               onClick={[Function]}
 >
-              Pick A League
+              Pick A Sport
 </button>,
             null,
             <button
@@ -335,12 +340,12 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Pick A League",
+              "children": "Pick A Sport",
               "className": "league-menu",
               "onClick": [Function],
             },
             "ref": null,
-            "rendered": "Pick A League",
+            "rendered": "Pick A Sport",
             "type": "button",
           },
           null,

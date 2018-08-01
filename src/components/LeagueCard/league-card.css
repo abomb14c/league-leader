@@ -1,0 +1,36 @@
+.league-card-container {
+  background-color: #3B3738;
+  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.30);
+  display: flex;
+  height: 300px;
+  margin-left: 5%;
+  margin-top: 3%;
+  width: 25%;
+}
+
+.league-card-header {
+  border-bottom: 2px solid #C63D0F;
+  display: flex;
+  color: #FDF3E7;
+  font-weight: 200;
+  height: 50px;
+  padding-bottom: 5px;
+  width: 100%;
+}
+
+.league-card-header-des{
+  font-weight: 200;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.league-card-header-content {
+  margin-right: 2%;
+  color: #C63D0F;
+}
+
+.league-card-header-des-title {
+  margin-left: 2%;
+  margin-right: 3%;
+  color: #C63D0F;
+}

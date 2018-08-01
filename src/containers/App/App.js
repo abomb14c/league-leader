@@ -8,7 +8,7 @@ import Login from '../../components/Login/Login';
 import Home from '../Home/Home';
 import SetupLeague from '../SetupLeague/SetupLeague';
 import DraftSection from '../DraftSection/DraftSection';
-import { fetchEnglandScores, fetchNbaTeams } from '../../apiCalls/apiCalls';
+import { fetchEnglandScores, fetchNbaTeams, fetchLeagues } from '../../apiCalls/apiCalls';
 import {updateEnglishSoccer} from '../../actions/handleSoccer/handleSoccer';
 import {addNBA} from '../../actions/handleNba/handleNba';
 import PropTypes from 'prop-types';
@@ -68,7 +68,11 @@ export class App extends Component {
           />
           <Route
             exact path="/draft"
-            component={DraftSection}
+            render={ () => (
+              this.props.leagueID ?
+                <Redirect to='/leagues' /> :
+                < DraftSection />
+            )}
           />
         </Switch>
       </div>
@@ -78,7 +82,8 @@ export class App extends Component {
 
 export const mapStateToProps = state => ({
   user: state.user,
-  league: state.league
+  league: state.league,
+  leagueID: state.leagueID
 });
 
 export const mapDispatchToProps = dispatch => ({
@@ -93,5 +98,6 @@ App.propTypes = {
   user: PropTypes.object,
   league: PropTypes.object,
   handleEnglishSoccer: PropTypes.func,
-  handleNba: PropTypes.func
+  handleNba: PropTypes.func,
+  leagueID: PropTypes.object
 };

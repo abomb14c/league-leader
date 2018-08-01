@@ -40,7 +40,7 @@
   display: flex;
   flex-direction: column;
   height: 150px;
-  margin-bottom: 2%;
+  /* margin-bottom: 2%; */
   width: 25%;
  
 }
@@ -70,4 +70,15 @@
 
 .league-title {
   color: #FDF3E7;
+}
+
+.submit-league-button {
+  border: none;
+  background-color: #7E8F7C;
+  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.30);
+  color: #FDF3E7;
+  height: 35px;
+  font-size: 14px;
+  margin-bottom: 4%;
+  width: 25%;
 }

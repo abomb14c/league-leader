@@ -1,16 +1,19 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import  {Leagues, mapStateToProps}  from './Leagues';
+import {DraftTeamsContainer, mapStateToProps} from './DraftTeamsContainer';
 
-describe('Leagues', () => {
+describe('DraftTeamsContainer', () => {
   let wrapper;
-  let mockProps;
+  let mockProps; 
 
   beforeEach(() => {
     mockProps = {
-      user: {}
+      draftTeams: [{}, {}, {}]
     };
-    wrapper = shallow(<Leagues {...mockProps}/>, { disableLifecycleMethods: true });
+
+    wrapper = shallow(<DraftTeamsContainer
+      {...mockProps}
+    />);
   });
   
   it('should match the snapshot', () => {
@@ -18,16 +21,20 @@ describe('Leagues', () => {
   });
 });
 
+
 describe('mapStateToProps', () => {
-  it('should map the user and EPL to props', () => {
+  it('should map draftTeams to props', () => {
     const mockState = {
-      user: {user_id:1},
       EPL: [{}, {}, {}],
+      NBA: {'EASTERN CONFERENCE':[{}, {}, {}],
+        'WESTERN CONFERENCE': [{}, {}, {}]
+      },
       draftTeams: [{}, {}, {}]
     };
 
     const expected = {
-      user: {user_id:1}
+      draftTeams: [{}, {}, {}]
+
     };
     
     const mappedProps = mapStateToProps(mockState);

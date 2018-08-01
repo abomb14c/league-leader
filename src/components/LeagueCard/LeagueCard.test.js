@@ -1,17 +1,19 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import  DraftPicks  from './DraftPicks';
+import LeagueCard from './LeagueCard';
 
-describe('DraftPicks', () => {
+describe('LeagueCard', () => {
   let wrapper;
-  let mockProps;
+  let mockProps; 
 
   beforeEach(() => {
     mockProps = {
-      teams: [{}, {}, {}]
+      bet: 'jersey',
+      league_type: 'EPL',
+      name: 'League'
     };
 
-    wrapper = shallow(<DraftPicks
+    wrapper = shallow(<LeagueCard
       {...mockProps}
     />);
   });
@@ -20,4 +22,3 @@ describe('DraftPicks', () => {
     expect(wrapper).toMatchSnapshot();
   });
 });
-

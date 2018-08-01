@@ -10,9 +10,11 @@ describe('UserDraftCard', () => {
   let wrapper;
   let mockHandleTeam;
   let mockProps;
+  let mockAddDraftPick; 
   
   beforeEach(() => {
     mockHandleTeam = jest.fn();
+    mockAddDraftPick = jest.fn()
     mockProps = {
       EPL: [{}, {}, {}],
       user: {user_id: 2}
@@ -20,6 +22,7 @@ describe('UserDraftCard', () => {
   
     wrapper = shallow(<UserDraftCard 
       handleTeam={mockHandleTeam}
+      addDraftPick={mockAddDraftPick}
       {...mockProps}
     />);
   });
@@ -65,7 +68,6 @@ describe('UserDraftCard', () => {
   });
 });
 
-
 describe('mapStateToProps', () => {
   it('should map the user and EPL to props', () => {
     const mockState = {
@@ -75,8 +77,7 @@ describe('mapStateToProps', () => {
     };
 
     const expected = {
-      user: {user_id:1},
-      EPL: [{}, {}, {}]
+      user: {user_id:1}
     };
     
     const mappedProps = mapStateToProps(mockState);
@@ -96,7 +97,6 @@ describe('mapDispatchtoProps', () => {
       type: "REMOVE_TEAM", 
       team
     };
-
 
     mappedProps.handleTeam(team);
 
