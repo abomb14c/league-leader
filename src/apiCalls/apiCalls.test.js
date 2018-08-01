@@ -49,6 +49,7 @@ describe("apiCalls", () => {
       await expect(api.fetchNbaTeams()).resolves.toEqual(mockCleanNBAData);
     });
   });
+
   describe("postNewUser", () => {
     let mockUsers;
     let mockUser;
@@ -182,4 +183,77 @@ describe("apiCalls", () => {
       expect(actual).toEqual(expected);
     }); 
   });
+});
+  
+describe("addLEagueFetch", () => {
+  let mockUsers;
+  let mockKeys;
+  let leagueInfo;
+
+
+  beforeEach(() => {
+    mockKeys = {
+      leagueName: 'league', 
+      leagueType: 'EPL',
+      bet: 'jersey',
+      admin: 2,
+      teams: [{}, {}, {}]
+    };
+
+    leagueInfo = {
+      name: 'league',
+      league_type:'EPL',
+      bet: 'jersey',
+      admin: 2,
+      teams: [{}, {}, {}]
+    };
+
+    window.fetch = jest.fn().mockImplementation(() =>
+      Promise.resolve({
+        status: 200,
+        json: () =>
+          Promise.resolve({
+            leagueInfo: leagueInfo
+          })
+      })
+    );
+  });
+
+  it("calls fetch with the correct data when adding a new league", async () => {
+    const expected = [
+      `http://localhost:3000/league?name=${mockKeys.leagueName}&league_type=${mockKeys.leagueType}&bet=${mockKeys.bet}'&admin=${mockKeys.admin}&teams=${mockKeys.teams}`,
+      {
+        body: JSON.stringify(leagueInfo),
+        headers: {
+          "Content-Type": "application/json"
+        },
+        method: "POST"
+      }
+    ];
+
+    await api.addLeagueFetch(leagueInfo);
+
+    expect(window.fetch).toHaveBeenCalledWith(...expected);
+  });
+
+  it('Should return an object of leagueinfo', async () => {
+    
+    window.fetch = jest.fn().mockImplementation(() =>
+      Promise.resolve({
+        status: 200,
+        json: () => Promise.resolve(leagueInfo)
+      })
+    );
+
+    const expected = {
+      admin: 2, 
+      bet: "jersey", 
+      league_type: "EPL", 
+      name: "league", 
+      teams: [{}, {}, {}]
+    };
+    const actual = await api.addLeagueFetch(leagueInfo);
+
+    expect(actual).toEqual(expected);
+  }); 
 });
