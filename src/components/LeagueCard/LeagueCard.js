@@ -2,7 +2,6 @@ import React from 'react';
 import './league-card.css';
 
 const LeagueCard = ({admin, bet, league_type, name }) => {
-  // console.log(props)
   return (
     <div className="league-card-container">
       <div className="league-card-header">

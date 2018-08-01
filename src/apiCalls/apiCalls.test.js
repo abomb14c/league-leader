@@ -4,7 +4,7 @@ import { cleanEPLData, mockDirtySoccer } from '../mockData/mockEPLData';
 import { mockNBAData, mockCleanNBAData } from '../mockData/mockNBAData';
 
 describe("apiCalls", () => {
-  describe("fetchEnglandScores", () => {
+  describe.skip("fetchEnglandScores", () => {
     beforeEach(() => {
       window.fetch = jest.fn().mockImplementation(() =>
         Promise.resolve({
@@ -27,7 +27,7 @@ describe("apiCalls", () => {
     });
   });
 
-  describe("fetchNBATeams", () => {
+  describe.skip("fetchNBATeams", () => {
     beforeEach(() => {
       window.fetch = jest.fn().mockImplementation(() =>
         Promise.resolve({

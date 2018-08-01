@@ -46,9 +46,9 @@ ShallowWrapper {
                     render={[Function]}
           />
           <Route
-                    component={[Function]}
                     exact={true}
                     path="/draft"
+                    render={[Function]}
           />
 </Switch>,
       ],
@@ -102,9 +102,9 @@ ShallowWrapper {
               render={[Function]}
 />,
             <Route
-              component={[Function]}
               exact={true}
               path="/draft"
+              render={[Function]}
 />,
           ],
         },
@@ -167,9 +167,9 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "component": [Function],
               "exact": true,
               "path": "/draft",
+              "render": [Function],
             },
             "ref": null,
             "rendered": null,
@@ -213,9 +213,9 @@ ShallowWrapper {
                         render={[Function]}
             />
             <Route
-                        component={[Function]}
                         exact={true}
                         path="/draft"
+                        render={[Function]}
             />
 </Switch>,
         ],
@@ -269,9 +269,9 @@ ShallowWrapper {
                 render={[Function]}
 />,
               <Route
-                component={[Function]}
                 exact={true}
                 path="/draft"
+                render={[Function]}
 />,
             ],
           },
@@ -334,9 +334,9 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "component": [Function],
                 "exact": true,
                 "path": "/draft",
+                "render": [Function],
               },
               "ref": null,
               "rendered": null,

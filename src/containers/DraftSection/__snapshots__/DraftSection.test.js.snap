@@ -4,7 +4,7 @@ exports[`DraftCard should match the snapshot 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Unknown
+  Symbol(enzyme.__unrendered__): <DraftSection
     draftTeams={Array []}
     league={Object {}}
 />,
@@ -40,6 +40,12 @@ ShallowWrapper {
                     />
           </div>
 </div>,
+        <button
+          className="submit-league-button"
+          onClick={[Function]}
+>
+          Submit League
+</button>,
         <div
           className="draft-section"
 >
@@ -55,6 +61,7 @@ ShallowWrapper {
                                         Available Teams
                               </h3>
                     </div>
+                    <Connect(Component) />
           </div>
           <Connect(UserDraftCard) />
 </div>,
@@ -155,6 +162,19 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
+          "children": "Submit League",
+          "className": "submit-league-button",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "Submit League",
+        "type": "button",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
           "children": Array [
             <div
               className="draft-teams"
@@ -168,6 +188,7 @@ ShallowWrapper {
                                           Available Teams
                             </h3>
               </div>
+              <Connect(Component) />
 </div>,
             <Connect(UserDraftCard) />,
           ],
@@ -190,7 +211,7 @@ ShallowWrapper {
                                     Available Teams
                   </h3>
 </div>,
-                Array [],
+                <Connect(Component) />,
               ],
               "className": "draft-teams",
             },
@@ -222,6 +243,15 @@ ShallowWrapper {
                   "type": "h3",
                 },
                 "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
               },
             ],
             "type": "div",
@@ -267,6 +297,12 @@ ShallowWrapper {
                         />
             </div>
 </div>,
+          <button
+            className="submit-league-button"
+            onClick={[Function]}
+>
+            Submit League
+</button>,
           <div
             className="draft-section"
 >
@@ -282,6 +318,7 @@ ShallowWrapper {
                                                 Available Teams
                                     </h3>
                         </div>
+                        <Connect(Component) />
             </div>
             <Connect(UserDraftCard) />
 </div>,
@@ -382,6 +419,19 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
+            "children": "Submit League",
+            "className": "submit-league-button",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "Submit League",
+          "type": "button",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
             "children": Array [
               <div
                 className="draft-teams"
@@ -395,6 +445,7 @@ ShallowWrapper {
                                                 Available Teams
                                 </h3>
                 </div>
+                <Connect(Component) />
 </div>,
               <Connect(UserDraftCard) />,
             ],
@@ -417,7 +468,7 @@ ShallowWrapper {
                                         Available Teams
                     </h3>
 </div>,
-                  Array [],
+                  <Connect(Component) />,
                 ],
                 "className": "draft-teams",
               },
@@ -449,6 +500,15 @@ ShallowWrapper {
                     "type": "h3",
                   },
                   "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
                 },
               ],
               "type": "div",
