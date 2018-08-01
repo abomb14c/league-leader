@@ -21,3 +21,7 @@ export const fetchUser = jest.fn().mockImplementation(() => Promise.resolve({
     email: 'alanjcharles14@gmail.com'
   }
 }));
+
+export const addLeagueFetch = jest.fn().mockImplementation(() => Promise.resolve({
+  'id':1
+}));
