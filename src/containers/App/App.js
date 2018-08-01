@@ -8,7 +8,7 @@ import Login from '../../components/Login/Login';
 import Home from '../Home/Home';
 import SetupLeague from '../SetupLeague/SetupLeague';
 import DraftSection from '../DraftSection/DraftSection';
-import { fetchEnglandScores, fetchNbaTeams } from '../../apiCalls/apiCalls';
+import { fetchEnglandScores, fetchNbaTeams, fetchLeagues } from '../../apiCalls/apiCalls';
 import {updateEnglishSoccer} from '../../actions/handleSoccer/handleSoccer';
 import {addNBA} from '../../actions/handleNba/handleNba';
 import PropTypes from 'prop-types';
@@ -29,6 +29,8 @@ export class App extends Component {
   componentDidMount = async () => {
     await this.getSoccerData();
     await this.getNbaData();  
+    // console.log(this.props.user)
+    // await fetchLeagues(this.props.user);
   }
 
   render() {

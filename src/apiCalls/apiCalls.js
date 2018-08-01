@@ -75,3 +75,11 @@ export const addLeagueFetch = async (leagueInfo) => {
   return leagueData;
 
 };
+
+export const fetchLeagues = async (user) => {
+  const url = `http://localhost:3000/league/${user.user_id}`;
+
+  const response = await fetch(url);
+  const leagues = await response.json();
+  return leagues;
+};
