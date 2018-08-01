@@ -1,7 +1,8 @@
-![Opening Page](./src/assets/openingscreen.png)
+![Login Page](./src/assets/login.jpg)
 
-![Login Page](./src/assets/loginscreen.png)
+![Landing Page](./src/assets/landing.jpg)
 
+![Draft Page](./src/assets/draft-section.jpg)
 
 # League-Leader
 
