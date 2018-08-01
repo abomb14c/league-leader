@@ -29,8 +29,6 @@ export class App extends Component {
   componentDidMount = async () => {
     await this.getSoccerData();
     await this.getNbaData();  
-    // console.log(this.props.user)
-    // await fetchLeagues(this.props.user);
   }
 
   render() {
