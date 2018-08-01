@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import  {Leagues}  from './Leagues';
+import  {Leagues, mapStateToProps}  from './Leagues';
 
 describe('Leagues', () => {
   let wrapper;
@@ -15,5 +15,22 @@ describe('Leagues', () => {
   
   it('should match the snapshot', () => {
     expect(wrapper).toMatchSnapshot();
+  });
+});
+
+describe('mapStateToProps', () => {
+  it('should map the user and EPL to props', () => {
+    const mockState = {
+      user: {user_id:1},
+      EPL: [{}, {}, {}],
+      draftTeams: [{}, {}, {}]
+    };
+
+    const expected = {
+      user: {user_id:1}
+    };
+    
+    const mappedProps = mapStateToProps(mockState);
+    expect(mappedProps).toEqual(expected);
   });
 });
