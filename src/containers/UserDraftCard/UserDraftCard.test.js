@@ -68,7 +68,6 @@ describe('UserDraftCard', () => {
   });
 });
 
-
 describe('mapStateToProps', () => {
   it('should map the user and EPL to props', () => {
     const mockState = {
@@ -98,7 +97,6 @@ describe('mapDispatchtoProps', () => {
       type: "REMOVE_TEAM", 
       team
     };
-
 
     mappedProps.handleTeam(team);
 

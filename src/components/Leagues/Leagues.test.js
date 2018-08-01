@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import  Leagues  from './Leagues';
+import  {Leagues}  from './Leagues';
 
-describe.skip('Leagues', () => {
+describe('Leagues', () => {
   let wrapper;
   let mockProps;
 

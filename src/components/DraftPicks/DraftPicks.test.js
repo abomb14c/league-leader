@@ -21,4 +21,3 @@ describe('DraftPicks', () => {
   });
 });
 
-// add test to render correct amount of teams
